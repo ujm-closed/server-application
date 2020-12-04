@@ -27,7 +27,7 @@ public class CityDao {
                 "}\n" +
                 "ORDER BY ?countryLabel";
 		Query query = QueryFactory.create(queryString);
-		QueryExecution qexec = QueryExecutionFactory.sparqlService("query.wikidata.org/sparql", queryString);
+		QueryExecution qexec = QueryExecutionFactory.sparqlService("https://query.wikidata.org/sparql?", queryString);
         try {
             ResultSet results = qexec.execSelect();
             ResultSetFormatter.out(System.out, results, query);
