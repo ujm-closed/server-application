@@ -7,10 +7,11 @@ import org.apache.jena.query.QueryFactory;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.query.ResultSetFormatter;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ResourceUtils;
 
 @Component
 public class CityDao {
-	
+//	ResourceUtils.getFile("classpath:config/sample.txt")
 	public void searchCities(String cityName) {
 		String queryString = "PREFIX bd: <http://www.bigdata.com/rdf#>\n" +
                 "PREFIX wikibase: <http://wikiba.se/ontology#>\n" +
@@ -37,4 +38,5 @@ public class CityDao {
             qexec.close();
         }
 	}
+
 }

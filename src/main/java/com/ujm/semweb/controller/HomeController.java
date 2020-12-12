@@ -1,5 +1,6 @@
 package com.ujm.semweb.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -22,7 +23,11 @@ import org.springframework.web.multipart.MultipartFile;
 public class HomeController {
 	@RequestMapping(method=RequestMethod.GET, path= "" )
     public String greet(){
-        return "Hello";
+		 String fileName = "src/main/resources/data/cities.csv";
+		 ClassLoader classLoader = getClass().getClassLoader();
+		 File cityFile=new File(classLoader.getResource(fileName).getFile());
+		 System.out.print(cityFile.exists());
+		 return "Hello";
     }
     @CrossOrigin
     @RequestMapping(method=RequestMethod.POST, path = "/upload")

@@ -1,0 +1,122 @@
+/**
+ * 
+ * SELECT ?comune ?comuneLabel 
+WHERE 
+{
+  ?comune wdt:P31 wd:Q484170.
+#   ?station wdt:P131 ?comune.
+#   ?station wdt:P31 wd:Q55488.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+ */
+	
+//SELECT ?officialName ?comuneLabel ?cordinate
+//		WHERE 
+//		{
+//		  ?comune wdt:P31 wd:Q484170;
+//		          wdt:P1448 ?officialName;
+//		          wdt:P625 ?cordinate;
+//		#           wdt:P361 ?partOf;
+//		#           wdt:P421 ?timezone.
+//		#           rdf:label ?label.
+//		#   filter not exists { ?property rdfs:label ?label }
+//		  
+//		#   ?station wdt:P131 ?comune.
+//		#   ?station wdt:P31 wd:Q55488.
+//		  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+//}
+
+
+//DISTANCE FUNCTION
+ PREFIX geof: <http://www.opengis.net/def/geosparql/function/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+SELECT ?place ?placeLabel ?location WHERE {
+  ?place wdt:P131  wd:Q42716.                           
+   ?place  wdt:P625 ?location.s
+   FILTER(geof:distance("Point(4.39166 45.42672)", ?location) > 1). # over 3000?km away from south pole
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+
+
+//STATIONS OF COMMUNE
+SELECT  ?comuneLabel ?stationLabel
+	WHERE 
+	{
+	  ?comune wdt:P31 wd:Q484170;
+	          wdt:P1448 ?officialName.
+      ?station wdt:P31 wd:Q55488;
+               wdt:P131 ?comune.
+              
+	  
+	#   ?station wdt:P131 ?comune.
+	#   ?station wdt:P31 wd:Q55488. 
+	  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+
+
+// take all the stations from all commune france 
+SELECT  ?comuneLabel ?stationLabel ?station ?coordinate ?officialName
+	WHERE 
+	{
+ 	  ?comune wdt:P31 wd:Q484170;
+ 	          wdt:P1448 ?officialName.
+      ?station wdt:P31 wd:Q55488;
+               wdt:P131 ?comune;
+               wdt:P625 ?coordinate.
+              
+	  
+	#   ?station wdt:P131 ?comune.
+	#   ?station wdt:P31 wd:Q55488. 
+	  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+
+//loire data stations
+SELECT  ?comuneLabel ?stationLabel ?station ?coordinate ?officialName
+	WHERE 
+	{
+ 	  ?comune wdt:P31 wd:Q484170;
+              wdt:P131 wd:Q12569;
+ 	          wdt:P1448 ?officialName.
+      ?station wdt:P31 wd:Q55488;
+               wdt:P131 ?comune;
+               wdt:P625 ?coordinate.
+              
+	  
+	#   ?station wdt:P131 ?comune.
+	#   ?station wdt:P31 wd:Q55488. 
+	  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+
+
+
+//	//SELECT ?officialName ?comuneLabel ?cordinate
+//	WHERE 
+//	{
+//	  ?comune wdt:P31 wd:Q484170;
+//	          wdt:P1448 ?officialName;
+//	          wdt:P625 ?cordinate;
+//	#           wdt:P361 ?partOf;
+//	#           wdt:P421 ?timezone.
+//	#           rdf:label ?label.
+//	#   filter not exists { ?property rdfs:label ?label }
+//	  
+//	#   ?station wdt:P131 ?comune.
+//	#   ?station wdt:P31 wd:Q55488.
+//	  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+//}
+
+
+>>PROJECT QUERY
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX a: <https://www.wikidata.org/wiki/Property:P31>
+PREFIX wd:<https://www.wikidata.org/wiki/>
+PREFIX p:<https://www.wikidata.org/wiki/Property:>
+PREFIX schema:<http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT  ?label  ?trainStation {
+  
+  ?cities ?x wd:Q484170 ;
+   			schema:label ?label . 	
+  ?trainStation p:P131 ?cities.
+}LIMIT 10
