@@ -70,7 +70,7 @@ SELECT  ?comuneLabel ?stationLabel ?station ?coordinate ?officialName
 	#   ?station wdt:P31 wd:Q55488. 
 	  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
 }
-
+// FILTER(?lang in ('en', 'uz', 'ru', 'ko')) .
 //loire data stations
 SELECT  ?comuneLabel ?stationLabel ?station ?coordinate ?officialName
 	WHERE 
@@ -120,3 +120,21 @@ SELECT  ?label  ?trainStation {
    			schema:label ?label . 	
   ?trainStation p:P131 ?cities.
 }LIMIT 10
+
+
+/*
+ SELECT  * {
+  <http://www.wikidata.org/entity/Q90> ?predicate ?d
+  }LIMIT 100
+<http://www.w3.org/2000/01/rdf-schema#label>
+SELECT  * {
+    ?cities <https://www.wikidata.org/wiki/Property:P31> "https://www.wikidata.org/wiki/Q484170"
+}LIMIT 100
+
+
+SELECT  * {
+  ?cities <https://www.wikidata.org/wiki/Property:P31> "https://www.wikidata.org/wiki/Q484170" .
+  ?stations <https://www.wikidata.org/wiki/Property:P31> "https://www.wikidata.org/wiki/Q55488"; 
+                      <https://www.wikidata.org/wiki/Property:P131> ?cities .
+}LIMIT 10
+  	 */

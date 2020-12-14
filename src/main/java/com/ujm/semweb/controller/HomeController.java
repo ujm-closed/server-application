@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping(value = "/api/")
+@RequestMapping(value = "/api/home/")
 
 @CrossOrigin
 public class HomeController {
@@ -29,11 +29,11 @@ public class HomeController {
 		 System.out.print(cityFile.exists());
 		 return "Hello";
     }
+	
     @CrossOrigin
     @RequestMapping(method=RequestMethod.POST, path = "/upload")
     public ResponseEntity<String> uploadFile(@RequestBody MultipartFile files) throws IOException {
     	try {
-    		
             return  ResponseEntity.ok("Success");
 		} catch (Exception e) {
 			 return  ResponseEntity.ok(e.getMessage());

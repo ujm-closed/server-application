@@ -86,8 +86,6 @@ public class GraphDBTest {
 	        .createRemote(updateRequest, 
 	        PERSONDATA_REPO_UPDATE);
 	    updateProcessor.execute();
-	    
-	    
 	  }
 	  
 	  public void saveToTrippleStore() {

@@ -24,10 +24,10 @@ public class SwaggerConfig {
 				.apiInfo(apiInfo()).select().paths(postPaths()).build();
 	}
 	private Predicate<String> postPaths() {
-		return or(regex("/api./*"), regex("/api/*"));
+		return or(regex("/api.*"), regex("/api/*.*"));
 	}
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("ITCPS2 Project - CLOUD COMPUTING")
+		return new ApiInfoBuilder().title("ITCPS2 Project - SEMANTIC WEB")
 				.description("API reference for developers")
 				.contact("univ.st-etienne@fr.com").license("Private License")
 				.licenseUrl("univ.st-etienne@fr.com").version("3.02").build();
