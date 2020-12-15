@@ -15,7 +15,8 @@ public class DumpDataTest {
         DumpData dump=new DumpData();
 //        dump.dumpCitiesGraph();
 
-        dump.dumpTrainStationGraph();
+//        dump.dumpTrainStationGraph();
+        dump.dumpHospitalGraph();
 //       Assertions.assertThat(output.getAll()).contains("SAINT-ETIENNE");
     }
 }

@@ -330,5 +330,174 @@ public class DumpData {
     		GRAPH_REPO_UPDATE);
 	    updateProcessor.execute();
     }
+	
+	//***
+	public void dumpHospitalGraph() {
+		String a="https://www.wikidata.org/wiki/Property:P31";
+		String wd="https://www.wikidata.org/wiki/";
+		String fileName = "src/main/resources/data/hospital.csv";
+		String geo="http://www.w3.org/2003/01/geo/wgs84_pos#";
+		String organisationID="https://www.wikidata.org/wiki/Property:P1901";
+		String organisation="https://www.wikidata.org/wiki/Property:P2541";
+		String property="https://www.wikidata.org/wiki/Property:";
+		String coordinate="https://www.wikidata.org/wiki/Property:P625";
+		String ex="http://www.example.org/";
+		String schemaHospitalInstance="https://schema.org/Hospital";
+		String schema="https://schema.org/";
+		String date_ouverture="https://www.wikidata.org/wiki/Property:P580";
+		String wgs84="https://www.wikidata.org/wiki/Property:P625";
+		 ClassLoader classLoader = getClass().getClassLoader();
+		 File cityFile=new File(fileName);
+		 Model model =ModelFactory.createDefaultModel();
+		 String hospitalGraph="INSERT DATA {";
+		 try (CSVReader csvReader = new CSVReader(new FileReader(cityFile))) {
+		    String[] values = null;
+		    int count=0;
+		    LOG.info("PREPARING CITY RDF DATA");
+		    while ((values = csvReader.readNext()) != null) {
+		    	//SKINPING HEADING
+		    	if(count==0) {
+		    		count++;
+		    		continue;
+		    	}
+		        String hospitalQid=ex+values[0];
+        		//DEBUGGINH
+		        if(hospitalQid.equals("780000410")) {
+		        	System.out.print("SAD");
+		        }
+		        
+		        //SettingUp-InstanceOf
+		        hospitalGraph+="<"+hospitalQid+"> "
+				+"<"+a+"> "
+				+"<"+model.createProperty(schema+"Hospital").toString()+"> . ";
+		        
+//				//SettingUp-Address
+//		        hospitalGraph+="<"+hospitalQid+"> "
+//				+"<"+model.createProperty(schema+"address").toString()+"> "
+//				+" \""+values[6].toString()+"\"@en . ";
+		        
+				//SettingUp-Ã¯Â»Â¿finess_et
+		   
+		        if(!values[0].isEmpty() && !values[0].equals(null) &&  !values[0].equals("")) {
+		        	hospitalGraph+="<"+hospitalQid+"> "
+		    				+"<"+model.createProperty(property+"P1901").toString()+"> "
+		    				+" \""+values[0].toString()+"\"@en . ";
+		        }
+		      //SettingUp-raison_sociale
+		        if(!values[1].isEmpty() && !values[1].equals(null) &&  !values[1].equals("")) {
+			        hospitalGraph+="<"+hospitalQid+"> "
+					+"<"+model.createProperty(schema+"medicalSpecialty").toString()+"> "
+					+" \""+values[1].toString()+"\"@en . ";
+		        }
+		    	//SettingUp-addressLocality
+		        if(!values[2].isEmpty() && !values[2].equals(null) &&  !values[2].equals("")) {
+			        hospitalGraph+="<"+hospitalQid+"> "
+					+"<"+model.createProperty(schema+"addressLocality").toString()+"> "
+					+" \""+values[2].toString()+"\"@en . ";
+		        }
+		    	//SettingUp-address
+		        if(!values[3].isEmpty() && !values[3].equals(null) &&  !values[3].equals("")) {
+			        hospitalGraph+="<"+hospitalQid+"> "
+					+"<"+model.createProperty(schema+"address").toString()+"> "
+					+" \""+values[3].toString()+"\"@en . ";
+		        }
+		        if(!values[4].isEmpty() && !values[4].equals(null) &&  !values[4].equals("")) {
+		    	//SettingUp-telephone
+			        hospitalGraph+="<"+hospitalQid+"> "
+					+"<"+model.createProperty(schema+"telephone").toString()+"> "
+					+" \""+values[4].toString()+"\"@en . ";
+		        }
+		        if(!values[5].isEmpty() && !values[5].equals(null) &&  !values[5].equals("")) {
+		    	//SettingUp-faxNumber
+		        	hospitalGraph+="<"+hospitalQid+"> "
+					+"<"+model.createProperty(schema+"faxNumber").toString()+"> "
+					+" \""+values[5].toString()+"\"@en . ";
+		        }
+		    	//SettingUp-type_etablissement
+		        if(!values[6].isEmpty() && !values[6].equals(null) &&  !values[6].equals("")) {
+			        hospitalGraph+="<"+hospitalQid+"> "
+					+"<"+model.createProperty(property+"P2541").toString()+"> "
+					+" \""+values[6].toString()+"\"@en . ";
+		        }
+		        if(!values[7].isEmpty() && !values[7].equals(null) &&  !values[7].equals("")) {
+		    	//SettingUp-date_ouverture
+		        hospitalGraph+="<"+hospitalQid+"> "
+				+"<"+model.createProperty(date_ouverture).toString()+"> "
+				+" \""+values[7].toString()+"\"@en . ";
+		        }
+		    	//SettingUp-lat
+		        if(!values[8].isEmpty() && !values[8].equals(null) &&  !values[8].equals("")) {
+		        hospitalGraph+="<"+hospitalQid+"> "
+				+"<"+model.createProperty(geo+"lat").toString()+"> "
+				+" \""+values[8].toString()+"\"@en . ";
+		        }
+		    	//SettingUp-long
+		        if(!values[9].isEmpty() && !values[9].equals(null) &&  !values[9].equals("")) {
+		        hospitalGraph+="<"+hospitalQid+"> "
+				+"<"+model.createProperty(geo+"long").toString()+"> "
+				+" \""+values[9].toString()+"\"@en . ";
+		        }
+		    	//SettingUp-wgs84
+		        if(!values[10].isEmpty() && !values[10].equals(null) &&  !values[10].equals("")) {
+			        hospitalGraph+="<"+hospitalQid+"> "
+					+"<"+model.createProperty(wgs84).toString()+"> "
+					+" \""+values[10].toString()+"\"@en . ";
+			    }
+		    	//SettingUp-COMMUNE
+		        if(!values[11].isEmpty() && !values[11].equals(null) &&  !values[11].equals("")) {
+			        hospitalGraph+="<"+hospitalQid+"> "
+					+"<"+model.createProperty(schema+"branchCode").toString()+"> "
+					+" \""+values[11].toString()+"\"@en . ";
+			    }
+		        
+		    	//SettingUp-typeOf
+		        if(!values[12].isEmpty() && !values[12].equals(null) &&  !values[12].equals("")) {
+			        hospitalGraph+="<"+hospitalQid+"> "
+					+"<"+model.createProperty(schema+"City").toString()+"> "
+					+"<"+values[12].toString()+"> . ";
+		        }
+		        
+				//SettingUp-Label
+		        if(!values[6].isEmpty() && !values[6].equals(null) &&  !values[6].equals("")) {
+			        hospitalGraph+="<"+hospitalQid+"> "
+					+"<"+RDFS.label.toString()+"> "
+					+" \""+values[6].toString()+"\"@en . ";
+			    }
+		        
+		        if(!values[6].isEmpty() && !values[6].equals(null) &&  !values[6].equals("")) {	
+					//SettingUp-Comment
+			        hospitalGraph+="<"+hospitalQid+"> "
+					+"<"+RDFS.comment.toString()+"> "
+					+" \""+values[6].toString()+"\" . ";
+			    }
+				//SettingUp-Coordinate
+		        if(!values[9].isEmpty() && !values[9].equals(null) &&  !values[9].equals("")) {
+		        	hospitalGraph+="<"+hospitalQid+"> "
+					+"<"+model.createProperty(property+"P625").toString()+"> "
+					+" \"Point("+values[9].toString()+" "+ values[8].toString()+")\" . ";
+	//				model.createTypedLiteral(Double.valueOf(stopLat)).getDatatypeURI()
+		        }
+				if(count%100==0) {
+					hospitalGraph+="}";
+				  LOG.info(hospitalGraph);
+				  LOG.info("STORING RDF DATA TO DB AT >>>>>> "+count);
+//				  saveToGraphDb(cityGraph);
+//				  LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
+//				  cityGraph="INSERT DATA {";
+				}
+				count++;
+		    }
+		    hospitalGraph+="}";
+
+		    LOG.info(hospitalGraph);
+		    LOG.info("STORING RDF DATA TO DB>>>>>>");
+		    saveToGraphDb(hospitalGraph);
+		    LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
+		 }
+		 catch(Exception e) {
+			 e.printStackTrace();
+		 }
+	}
+	
 
 }
