@@ -479,19 +479,21 @@ public class DumpData {
 		        }
 				if(count%100==0) {
 					hospitalGraph+="}";
+				LOG.info("STORING RDF DATA TO DB AT >>>>>> "+count);
 				  LOG.info(hospitalGraph);
 				  LOG.info("STORING RDF DATA TO DB AT >>>>>> "+count);
 //				  saveToGraphDb(cityGraph);
 //				  LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
-//				  cityGraph="INSERT DATA {";
+				  hospitalGraph+="INSERT DATA {";
 				}
+				LOG.info("COUNT IS >>>>>> "+count);
 				count++;
 		    }
 		    hospitalGraph+="}";
 
 		    LOG.info(hospitalGraph);
 		    LOG.info("STORING RDF DATA TO DB>>>>>>");
-		    saveToGraphDb(hospitalGraph);
+//		    saveToGraphDb(hospitalGraph);
 		    LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
 		 }
 		 catch(Exception e) {
@@ -515,6 +517,7 @@ public class DumpData {
 		String date_ouverture="https://www.wikidata.org/wiki/Property:P580";
 		String wgs84="https://www.wikidata.org/wiki/Property:P625";
 		String connecting_service="https://www.wikidata.org/wiki/Property:P1192";
+		String dbpedia_ontology="http://dbpedia.org/ontology";
 		 File cityFile=new File(fileName);
 		 Model model =ModelFactory.createDefaultModel();
 		 String bikeStationGraph="INSERT DATA {";
@@ -535,9 +538,9 @@ public class DumpData {
 //		        }
 		        
 //		        //SettingUp-InstanceOf
-//		        bikeStationGraph+="<"+hospitalQid+"> "
-//				+"<"+a+"> "
-//				+"<"+model.createProperty(schema+"Hospital").toString()+"> . ";
+		        bikeStationGraph+="<"+bikeStationQid+"> "
+				+"<"+a+"> "
+				+"<"+model.createProperty(dbpedia_ontology+"Station").toString()+"> . ";
 		        
 //				//SettingUp-Address
 //		        hospitalGraph+="<"+hospitalQid+"> "
@@ -597,21 +600,23 @@ public class DumpData {
 		        }
 		        
 		        
-				if(count%100==0) {
+				if(count%10==0) {
 					bikeStationGraph+="}";
+				System.out.println("SSSSSSSSSSSSSSSSSSSSS");
 				  LOG.info(bikeStationGraph);
 				  LOG.info("STORING RDF DATA TO DB AT >>>>>> "+count);
 //				  saveToGraphDb(cityGraph);
 //				  LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
-//				  cityGraph="INSERT DATA {";
+				  bikeStationGraph="INSERT DATA {";
 				}
 				count++;
+				System.out.println(count);
 		    }
 		    bikeStationGraph+="}";
 
 		    LOG.info(bikeStationGraph);
 		    LOG.info("STORING RDF DATA TO DB>>>>>>");
-		    saveToGraphDb(bikeStationGraph);
+//		    saveToGraphDb(bikeStationGraph);
 		    LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
 		 }
 		 catch(Exception e) {
