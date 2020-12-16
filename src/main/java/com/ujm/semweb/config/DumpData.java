@@ -551,9 +551,9 @@ public class DumpData {
 		    				+"<"+model.createProperty(property+"P1901").toString()+"> "
 		    				+" \""+values[0].toString()+"\"@en . ";
 		        }
-		      //SettingUp-raison_sociale
+		   
 		
-		    	//SettingUp-addressLocality
+		    	//SettingUp-connecting service
 		        if(!values[1].isEmpty() && !values[1].equals(null) &&  !values[1].equals("")) {
 		        	bikeStationGraph+="<"+bikeStationQid+"> "
 					+"<"+model.createProperty(connecting_service).toString()+"> "
@@ -588,6 +588,15 @@ public class DumpData {
 					+"<"+model.createProperty(schema+"productID").toString()+"> "
 					+" \""+values[6].toString()+"\"@en . ";
 		        }
+		        
+			      //SettingUp-number of racks
+		        if(!values[7].isEmpty() && !values[7].equals(null) &&  !values[7].equals("")) {
+		        	bikeStationGraph+="<"+bikeStationQid+"> "
+					+"<"+model.createProperty(schema+"additionalProperty").toString()+"> "
+					+" \""+values[7].toString()+"\"@en . ";
+		        }
+		        
+		        
 				if(count%100==0) {
 					bikeStationGraph+="}";
 				  LOG.info(bikeStationGraph);
