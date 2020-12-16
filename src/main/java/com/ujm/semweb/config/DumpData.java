@@ -500,4 +500,115 @@ public class DumpData {
 	}
 	
 
+	public void dumpBiksStationGraph() {
+		String a="https://www.wikidata.org/wiki/Property:P31";
+		String wd="https://www.wikidata.org/wiki/";
+		String fileName = "src/main/resources/data/hospital.csv";
+		String geo="http://www.w3.org/2003/01/geo/wgs84_pos#";
+		String organisationID="https://www.wikidata.org/wiki/Property:P1901";
+		String organisation="https://www.wikidata.org/wiki/Property:P2541";
+		String property="https://www.wikidata.org/wiki/Property:";
+		String coordinate="https://www.wikidata.org/wiki/Property:P625";
+		String ex="http://www.example.org/";
+		String schemaHospitalInstance="https://schema.org/Hospital";
+		String schema="https://schema.org/";
+		String date_ouverture="https://www.wikidata.org/wiki/Property:P580";
+		String wgs84="https://www.wikidata.org/wiki/Property:P625";
+		String connecting_service="https://www.wikidata.org/wiki/Property:P1192";
+		 File cityFile=new File(fileName);
+		 Model model =ModelFactory.createDefaultModel();
+		 String bikeStationGraph="INSERT DATA {";
+		 try (CSVReader csvReader = new CSVReader(new FileReader(cityFile))) {
+		    String[] values = null;
+		    int count=0;
+		    LOG.info("PREPARING CITY RDF DATA");
+		    while ((values = csvReader.readNext()) != null) {
+		    	//SKINPING HEADING
+		    	if(count==0) {
+		    		count++;
+		    		continue;
+		    	}
+		        String bikeStationQid=ex+values[0];
+        		//DEBUGGINH
+//		        if(hospitalQid.equals("780000410")) {
+//		        	System.out.print("SAD");
+//		        }
+		        
+//		        //SettingUp-InstanceOf
+//		        bikeStationGraph+="<"+hospitalQid+"> "
+//				+"<"+a+"> "
+//				+"<"+model.createProperty(schema+"Hospital").toString()+"> . ";
+		        
+//				//SettingUp-Address
+//		        hospitalGraph+="<"+hospitalQid+"> "
+//				+"<"+model.createProperty(schema+"address").toString()+"> "
+//				+" \""+values[6].toString()+"\"@en . ";
+		        
+				//SettingUp-Ã¯Â»Â¿finess_et
+		   
+		        if(!values[0].isEmpty() && !values[0].equals(null) &&  !values[0].equals("")) {
+		        	bikeStationGraph+="<"+bikeStationQid+"> "
+		    				+"<"+model.createProperty(property+"P1901").toString()+"> "
+		    				+" \""+values[0].toString()+"\"@en . ";
+		        }
+		      //SettingUp-raison_sociale
+		
+		    	//SettingUp-addressLocality
+		        if(!values[1].isEmpty() && !values[1].equals(null) &&  !values[1].equals("")) {
+		        	bikeStationGraph+="<"+bikeStationQid+"> "
+					+"<"+model.createProperty(connecting_service).toString()+"> "
+					+" \""+values[1].toString()+"\"@en . ";
+		        }
+		    	//SettingUp-address
+		        if(!values[2].isEmpty() && !values[2].equals(null) &&  !values[2].equals("")) {
+		        	bikeStationGraph+="<"+bikeStationQid+"> "
+					+"<"+model.createProperty(schema+"address").toString()+"> "
+					+" \""+values[3].toString()+"\"@en . ";
+		        }
+		        
+		    	
+			
+		 		//SettingUp-Coordinate
+		        if(!values[4].isEmpty() && !values[4].equals(null) &&  !values[4].equals("")) {
+		        	bikeStationGraph+="<"+bikeStationQid+"> "
+					+"<"+model.createProperty(property+"P625").toString()+"> "
+					+" \"Point("+values[4].toString()+" "+ values[3].toString()+")\" . ";
+	//				model.createTypedLiteral(Double.valueOf(stopLat)).getDatatypeURI()
+		        }
+		        
+		        //SettingUp-brand
+		        if(!values[5].isEmpty() && !values[5].equals(null) &&  !values[5].equals("")) {
+		        	bikeStationGraph+="<"+bikeStationQid+"> "
+					+"<"+model.createProperty(schema+"brand").toString()+"> "
+					+" \""+values[5].toString()+"\"@en . ";
+		        }
+		      //SettingUp-product_id
+		        if(!values[6].isEmpty() && !values[6].equals(null) &&  !values[6].equals("")) {
+		        	bikeStationGraph+="<"+bikeStationQid+"> "
+					+"<"+model.createProperty(schema+"productID").toString()+"> "
+					+" \""+values[6].toString()+"\"@en . ";
+		        }
+				if(count%100==0) {
+					bikeStationGraph+="}";
+				  LOG.info(bikeStationGraph);
+				  LOG.info("STORING RDF DATA TO DB AT >>>>>> "+count);
+//				  saveToGraphDb(cityGraph);
+//				  LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
+//				  cityGraph="INSERT DATA {";
+				}
+				count++;
+		    }
+		    bikeStationGraph+="}";
+
+		    LOG.info(bikeStationGraph);
+		    LOG.info("STORING RDF DATA TO DB>>>>>>");
+		    saveToGraphDb(bikeStationGraph);
+		    LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
+		 }
+		 catch(Exception e) {
+			 e.printStackTrace();
+		 }
+	}
+	
+
 }
