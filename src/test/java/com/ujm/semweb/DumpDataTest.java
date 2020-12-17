@@ -13,7 +13,9 @@ public class DumpDataTest {
 	@Test
     public void testDumpStations(CapturedOutput output) {
         DumpData dump=new DumpData();
+
         dump.dumpTrainStationGraphV2();
         //       Assertions.assertThat(output.getAll()).contains("SAINT-ETIENNE");
+
     }
 }

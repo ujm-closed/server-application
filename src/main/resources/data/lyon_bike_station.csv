@@ -1,0 +1,429 @@
+﻿properties__number,properties__name,properties__address,properties__lat,properties__lng,properties__availability,properties__code_insee,properties__bike_stands
+3037,Paul Bert / Garibaldi,"209, Rue Paul Bert",45.75710286,4.853480797,Vert,69383,20
+13001,Décines - Centre,"27, Rue Emile Bertrand",45.77187333,4.955766788,Vert,69275,20
+9020,Bourbonnais,"45, Rue du Bourbonnais",45.77346457,4.800287929,Bleu,69389,12
+6044,Charmettes / Bellecombe,"26, Rue de la Viabert",45.76637035,4.865084164,Vert,69386,16
+3008,Institut Lumière,Cours Albert Thomas,45.74583323,4.870638711,Vert,69383,18
+4002,Mairie du 4e,"133, Boulevard de la Croix Rousse",45.77420044,4.827765222,Vert,69384,20
+20003,Oullins - Pont Blanc,"Face 56, Boulevard de l'Yzeron",45.72015778,4.798331732,Vert,69149,24
+3081,Part-Dieu / Francfort,Rue Maurice Flandin,45.76060856,4.86308625,Vert,69383,28
+4007,Place Flammarion,Place Flammarion,45.77932645,4.820303198,Vert,69384,18
+1034,Carmélites,"Face 30, Montée des Carmélites",45.77000157,4.829269505,Vert,69381,16
+19001,Saint Genis Laval - Médiathèque,49 Avenue Gorges Clémenceau,45.697812,4.79477285,Vert,69204,12
+9049,Sergent Berthet / Gorge de Loup,"6, Rue Gorge de Loup",45.77013407,4.805158003,Vert,69389,16
+3017,Saxe / Dunoir,"5, Rue Dunoir",45.76092139,4.845193599,Vert,69383,37
+10021,GrandClément,Place GrandClément,45.75971832,4.889946936,Vert,69266,19
+7023,Berthelot / Route de Vienne,"Face 41, Route de Vienne",45.7425795,4.850563756,Vert,69387,15
+7049,Cité Scolaire Internationale,"26, Avenue Tony Garnier",45.72791886,4.823560081,Vert,69387,25
+9002,Mairie du 9e,Rue du Bourbonnais,45.77424083,4.805666011,Vert,69389,27
+10116,Blum / Faÿs,"171, Rue Léon Blum",45.76052124,4.90594544,Orange,69266,16
+10054,Stalingrad / Meliès,"2, Rue Georges Meliès",45.77670576,4.859523354,Vert,69266,24
+8054,Martinière / Monplaisir,"3, Rue Antoine Lumière",45.7408947,4.868305402,Vert,69388,20
+7039,Guillotière / Madeleine,"106, Grande rue de la Guillotière",45.75105655,4.84804823,Vert,69387,10
+2012,Gailleton,"4, Place Gailleton",45.7534495,4.833364552,Vert,69382,16
+7006,Gerland,"Face 317, Avenue Jean Jaurès",45.72757328,4.831197482,Vert,69387,40
+8023,Mermoz / Pinel,Avenue Jean Mermoz,45.73071397,4.887538766,Vert,69388,23
+2035,Childebert / Rivière,"2, Rue Marcel-Gabriel Rivière",45.75988628,4.8357988,Vert,69382,23
+3097,Augagneur / Fosse aux Ours,"28, Quai Victor Augagneur",45.7571997,4.840499138,Vert,69383,40
+9008,L'Ile Barbe,"3, Quai Paul Sédallian",45.7974122,4.829046353,Vert,69389,16
+9046,Mangini,"12, Rue Félix Mangini",45.79040881,4.816349392,Vert,69389,24
+4042,Grégory Coupet,"79, Rue Philippe De Lassalle",45.78170011,4.820600046,Vert,69384,16
+2038,Remparts d'Ainay,"15, Rue des Remparts d'Ainay",45.75308921,4.829807145,Vert,69382,24
+3035,Philomène Magnin,"3, Rue Philomène Magnin",45.75261258,4.858771003,Vert,69383,24
+9022,Masaryk / Saint-Cyr,Rue Masaryk,45.7786289,4.807120028,Vert,69389,13
+3138,Vivier Merle / Paul Bert Ouest,"Face 65, Boulevard Vivier Merle",45.75753544,4.85848884,Vert,69383,19
+3036,Félix Faure / Vivier Merle,"Face 106, Avenue Félix Faure",45.75381491,4.859855894,Gris,69383,35
+7033,Saint-Luc / Saint-Joseph,"Face 22, Quai Claude Bernard",45.7494177,4.834752005,Vert,69387,28
+7041,Domer / Chevreul,Rue Domer,45.74667483,4.844443466,Vert,69387,12
+6045,Brotteaux / Vauban,44 bd des Brotteaux,45.76636731,4.857001876,Vert,69386,15
+5047,Albéric Pont,"2, Rue Docteur Albéric Pont",45.75344434,4.804400989,Vert,69385,16
+8053,Lumière / Trouilhet,"6, Rue Antoine Lumière",45.74356785,4.870101746,Vert,69388,16
+8006,Place du 8 mai 1945,Rue Professeur Beauvisage,45.72976635,4.868166581,Vert,69388,20
+12002,Vaulx - Poudrette / La Soie,"Face 2, Rue de la Poudrette",45.76440031,4.919275786,Vert,69256,20
+10035,Boiron Granger,"45, Rrue Pierre Baratin",45.7631588,4.90047953,Vert,69266,16
+3031,Corneille / Servient,"126, Rue Pierre Corneille",45.75998096,4.844489675,Vert,69383,13
+3043,Place Rouget de L'Isle,Place Rouget de l'Isle,45.75396319,4.867353295,Vert,69383,16
+6001,Gare des Brotteaux,Place Jules Ferry,45.76690958,4.858992167,Vert,69386,16
+20001,Oullins - Gare,Avenue du Rhône,45.71702994,4.814135981,Vert,69149,40
+10114,Bel Air / Les Brosses,Avenue de Bel Air,45.75790707,4.910806709,Vert,69266,20
+3013,Place Antoinette,Place Antoinette,45.75365326,4.889242318,Vert,69383,21
+10008,Salengro / Vaillant,"108, Rue Roger salengro",45.77836821,4.879673281,Vert,69266,24
+3083,Les Halles,"183, Rue André Philip",45.76159093,4.850481163,Vert,69383,18
+6024,Tronchet / Anatole France,"115, Rue Tronchet",45.77073715,4.856752177,Orange,69386,10
+3068,Faure / Meynis,"202, Avenue Félix Faure",45.75506055,4.871397338,Vert,69383,28
+3082,Saxe / Moncey,"Face 119, Avenue Maréchal de Saxe",45.75756427,4.846118173,Vert,69383,28
+7046,Place de l'Ecole,"19, Rue de Saint-Cloud",45.73007992,4.827822956,Vert,69387,28
+5050,Théâtre Romain,"6, Rue de l'Antiquaille",45.7583624,4.821086642,Vert,69385,12
+7002,Universités Lyon III / Lyon II,"Face 16, Quai Claude Bernard",45.75141323,4.836393182,Vert,69387,40
+3007,Place d'Arsonval,Place d'Arsonval,45.74341568,4.878920616,Vert,69383,32
+3006,Villette / St-Antoine,"Face 1, Rue Saint Antoine",45.76285985,4.8622869,Vert,69383,23
+1037,Chazette Lassagne,Entrée Est du Tube Mode Doux,45.77292662,4.837269544,Bleu,69381,20
+9051,Andréi Sakharov,301 avenue A.Sakharov,45.78652474,4.797070902,Vert,69389,12
+7012,Place des Pavillons,"11, Place des Pavillons",45.7295008,4.829701609,Vert,69387,13
+3029,Place Aristide Briand,"Face 303, Rue Duguesclin",45.75300435,4.850247427,Vert,69383,38
+4003,Place Commandant Arnaud,Place Commandant Arnaud,45.77972515,4.834707282,Vert,69384,17
+4017,Place des tapis,"Face 12, Boulevard des Canuts",45.77602649,4.829621096,Vert,69384,17
+10086,Anatole France,Rue Anatole France,45.76982949,4.88963135,Bleu,69266,10
+10117,La Perralière,171 rue Léon Blum,45.76456367,4.892333607,Vert,69266,22
+9041,Carret / Sédaillan,"30, Quai Paul Sédaillan",45.79247774,4.820578258,Vert,69389,18
+9043,Marietton Ouest,"Face 77b, Rue Marietton",45.77608504,4.799737661,Vert,69389,20
+10087,Baratin,"76, Rue Pierre Baratin",45.76060376,4.900696968,Vert,69266,12
+4026,Birmingham,Avenue de Birmingham,45.77463111,4.813416257,Vert,69384,20
+10041,Kimmerling,"41, Route de Genas",45.7529724,4.898865663,Orange,69266,16
+2020,Musée des Confluences,Pont Raymond Barre,45.73330834,4.818920314,Vert,69382,20
+2040,Saint Antoine / Grenette,"12, quai St Antoine",45.76342254,4.832100854,,69382,20
+2023,,"1, quai Perrache",45.74451405,4.826775186,,69382,18
+10043,Salengro / Feyssine,"Face 44, Rue de la Feyssine",45.78298359,4.890634596,Vert,69266,20
+7018,Lycée Louise Labé,"1, Rue Rivet",45.74028065,4.83205937,Vert,69387,20
+2015,République / Stella,"1, Rue Stella",45.76070979,4.836288973,Vert,69382,27
+10056,11 novembre / Gaston Berger,Avenue du 11 novembre 1918,45.77906399,4.871496463,Vert,69266,35
+3024,Rockfeller / Esquirol,"35, Avenue Rockefeller",45.74133372,4.885540824,Vert,69383,19
+4001,Conservatoire bis,"1, Quai Joseph Gillet",45.77038943,4.814245667,Vert,69381,22
+8011,Place Lebret,Place Lebret,45.73565039,4.853042654,Vert,69388,14
+1006,Subsistances,14 quai Saint Vincent,45.76789577,4.819816657,Vert,69381,22
+3091,Hôpital Neurologique,"59, Boulevard Pinel",45.74818329,4.896957058,Orange,69383,20
+1024,Rouville,Place Rouville,45.76966444,4.824612349,Vert,69381,17
+4008,Clos Savaron,"10, Rue Clos Savaron",45.78263626,4.825559185,Vert,69384,20
+10038,Condorcet,Boulevard du 11 Novembre 1918,45.77904577,4.866778328,Vert,69266,23
+10060,Saint Exupéry,"33, Avenue Antoine de Saint Exupéry",45.75885897,4.878749576,Vert,69266,15
+7031,Jaurès / Gerland,"45, Rue de Gerland",45.73981323,4.840307389,Vert,69387,20
+9050,Allée de l'Europe,"228, Avenue du Plateau",45.78363717,4.794525308,Orange,69389,12
+4011,Place Joannès Ambre,Place Joannès Ambre,45.78157552,4.832857722,Orange,69384,20
+10101,Einstein / 11 novembre 1918,Bd 11 nov 1918,45.77942149,4.8740758,Vert,69266,34
+11001,Caluire - Gare de Cuire,"2, Rue Claude Baudrand",45.78577553,4.833713422,Vert,69034,18
+7022,Jaurès / Lagrange,"105, Avenue Jean Jaurès",45.74391433,4.841424445,Vert,69387,30
+3102,Docteur Long / Aubépins,"2, Rue de la Caille",45.75253943,4.894267472,Vert,69383,16
+5054,Champvert,"192, Avenue Barthélémy Buyer",45.76389777,4.792714308,Vert,69385,18
+6003,Avenue Verguin,"Face 14, Avenue Verguin",45.7729114,4.856326781,Orange,69386,20
+7015,Techsud,"Face 2, Rue Professeur Jean Bernard",45.7228,4.842706,Orange,69387,12
+8024,Mermoz / Michelet,"66, Avenue Jean Mermoz",45.73327178,4.878600857,Vert,69388,12
+24001,Ecully - Mairie,Place de la Libération,45.77508907,4.778672916,Vert,69081,12
+12005,Place Boissier,"7, Place Boissier",45.78627766,4.92688556,,69256,20
+6033,Créqui / Lafayette,"153, Rue de Créqui",45.76379601,4.847062,Orange,69386,15
+10012,Zola / France,"230, Cours emile Zola",45.76807042,4.88712372,Vert,69266,16
+10123,Saint Jean / Epi de Blé,"19, Rue Saint Jean",45.77664227,4.902361071,Orange,69266,12
+2003,Place Ampère,"18, Rue Bourgelat",45.75304453,4.82824554,Vert,69382,10
+10028,Ecole de musique,"49, Cours de la République",45.7675343,4.87396621,Vert,69266,24
+6041,Cité Internationale - Tête d'Or Nord,Allée Achille Lignon,45.78461105,4.859639147,Vert,69386,22
+10011,Gratte-Ciel,"174, Cours Emile Zola",45.76922744,4.880462252,Vert,69266,16
+15002,Saint Priest - Cité Berliet,Place Steven Spielberg,45.70598197,4.900984851,Vert,69290,20
+10005,11 novembre,Boulevard du 11 Novembre 1918,45.77970161,4.859991161,Vert,69266,35
+8042,Francis de Pressenssé,"74, Rue Paul Cazeneuve",45.73142727,4.860037966,Vert,69388,22
+10075,Gabriel Péri,Rue Gabriel Péri,45.77229959,4.865699268,Vert,69266,12
+4006,Philippe de Lassalle,Rue Philippe de Lassalle,45.77348011,4.821307646,Vert,69384,23
+10016,Place de la paix,"10, place de la Paix",45.75209973,4.914643009,Vert,69266,17
+5040,Place Crépu,"127, Quai Fulchiron",45.75784168,4.826105452,Bleu,69385,20
+3086,Feuillat / Lacassagne,"115, Avenue Lacassagne",45.74956271,4.875933403,Vert,69383,16
+3050,Friche RVI,"5, Rue Félix Rollet",45.74832071,4.87592396,Vert,69383,20
+8056,Delore / Audibert & Lavirotte,"Face 69, Rue Audibert & Lavirotte",45.73579523,4.856812819,Vert,69388,18
+2036,Place Antonin Gourju,Place Antonin Gourju,45.75948635,4.830169955,Vert,69382,30
+6002,Porte des Enfants du Rhône,Place Général Leclerc,45.7774933,4.844870726,Vert,69386,40
+6032,Préfecture / Sarrail,"14, Quai Général Sarrail",45.76485827,4.841565471,Vert,69386,20
+8055,Saint-Romain / Berliet,"57, Rue Marius Berliet\r\n57, Rue Marius Berliet",45.74225688,4.860372089,Vert,69388,20
+10024,Maisons Neuves,Place des Maisons Neuves,45.75595103,4.87734643,Vert,69266,23
+4004,Hénon,"60, Boulevard des Canuts",45.77975537,4.827648401,Vert,69384,22
+7003,Gambetta / Garibaldi,"100, Cours Gambetta",45.75179014,4.852607966,Vert,69387,40
+6042,Cité Internationale - Résidence hôtelière,Allée Achille Lignon,45.78481816,4.856511614,Vert,69386,28
+8035,Sans Souci,"18, Rue Edouard Rochet",45.74724873,4.865285783,Vert,69388,20
+5009,Place Ennemond Fousseret,Quai Romain Rolland angle Quai de Bondy,45.76468151,4.828983327,Vert,69385,16
+30002,Rillieux - Loup Pendu,"196, Avenue Pierre Mendes France",45.81597011,4.887043451,Vert,69286,18
+3011,Part-Dieu / Cuirassiers,Rue des Cuirassiers,45.75989765,4.857573031,Orange,69383,59
+10092,Montgolfier / Château Gaillard,135 rue Château Gaillard,45.77155433,4.890374214,Vert,69266,17
+7017,Beauvoir / Marot,"26, Rue Simone de Beauvoir",45.73675725,4.834138445,Vert,69387,20
+8038,Albert Thomas / Villon,"64, Cours Albert Thomas",45.74671633,4.867428645,Vert,69388,20
+18001,Pierre Bénite - Europe,"22, Rue Voltaire",45.70325586,4.821200376,Vert,69152,15
+2027,Perrache Est,48 Cours Suchet,45.74610307,4.825605394,Vert,69382,20
+6017,Lafayette / Inkermann,Face au 92b Rue d'Inkermann,45.76393602,4.865913254,Vert,69386,30
+3090,Vinatier,"95, Boulevard Pinel",45.74191155,4.893959114,Orange,69383,20
+8008,Beauvisage / Préssensé,"159, Rue Rrofesseur Beauvisage",45.72787186,4.863442059,Vert,69388,17
+5006,Quai Romain Rolland,Quai Romain Rolland,45.76203708,4.828889682,Vert,69385,17
+10014,Laurent Bonnevay / Astroballe,Rue du Sytral,45.76512406,4.90981822,Vert,69266,28
+7056,Place Raspail,", Rrue Cavenne",45.75576871,4.84073279,Vert,69387,22
+6020,Musée Guimet,"28, Boulevard des Belges",45.77450487,4.848477102,Vert,69386,15
+10112,Place de la Reconnaissance,"109, Route de Genas",45.75444024,4.885348919,Vert,69266,32
+4024,Lyon Métropole,"Face au 84, Quai Joseph Gillet",45.78817002,4.818560287,Vert,69384,25
+15001,Saint Priest - Parc Technologique,"312, Cours du 3ème Millénaire",45.71441038,4.931014316,Orange,69290,20
+8041,Etats-Unis / Viviani,"170, Boulevard des Etats-Unis",45.72470317,4.870765977,Vert,69388,20
+9006,Théâtre Nouvelle Génération,"Face 2, Rue Tissot",45.77729554,4.803311745,Vert,69389,16
+10032,Primat / Decorps,Angle rue Emile Decorps / Rue Max Barel,45.75715601,4.899965219,Orange,69266,13
+8021,Paul Santy,"101, Avenue Paul Santy",45.72851815,4.877305934,Gris,69388,16
+2011,Sala / Rue du Plat,25 Rue du Plat,45.75680849,4.82837438,Vert,69382,14
+16004,Vénissieux - Parilly,Place Jules Grandclément,45.71971196,4.888535366,Vert,69259,25
+10088,4 août 1789 / Pressensé,"243, Cours Emile Zola",45.76605874,4.898703143,Vert,69266,19
+7020,Parc de Gerland,"24, Allée Pierre de Coubertin",45.72434836,4.826821431,Vert,69387,26
+10031,Croix Luizet,"Face 158, Avenue Roger Salengro",45.78064416,4.883497017,Vert,69266,22
+1002,Opéra,"Face 18, Rue Joseph Serlin",45.76761095,4.836657005,Vert,69381,41
+2042,Joffre / Vaubecour,"43, Rue Vaubecour",45.75184824,4.824734489,Vert,69382,20
+9032,Place du Port Mouton,Place du Port Mouton,45.77382012,4.809560303,Vert,69389,18
+11002,Caluire - Saint-Clair,48 cours Aristide Briand,45.78547076,4.847842122,Vert,69034,20
+3003,Part-Dieu / Deruelle,Boulevard Eugène Deruelle,45.76297901,4.855006623,Orange,69383,30
+8001,Université Lyon III,"5, Rue du Professeur Rollet",45.74853957,4.861541779,Vert,69388,36
+3051,Place Henri,Place Henri,45.74818691,4.880593958,Vert,69383,13
+1001,Terreaux / Terme,"33, Rue Terme",45.76773469,4.832135062,Vert,69381,16
+10103,Doua / Rue des sports,Rue des Arts,45.78448519,4.877404233,Orange,69266,30
+10080,Vaillant / Perroncel,"45, Rue Edouard Vaillant",45.77539881,4.880263091,Vert,69266,17
+10063,Perrin / Jean Jaurès,"9, Place Jules Grandclément",45.75839182,4.885609434,Orange,69266,34
+10045,Anatole France / Alsace,24 Rue Anatole France,45.76690539,4.870161396,Vert,69266,20
+3085,Sacré Coeur,"68, Rue Antoine Charial",45.75786183,4.868350532,Vert,69383,16
+7011,Berthelot / Garibaldi,"111, Avenue Berthelot",45.74371181,4.847368883,Bleu,69387,15
+2008,Place Antonin Poncet,"1, Place Antonin Poncet",45.75676232,4.833927397,Vert,69382,40
+4014,Philippe de Lassalle / Pillement,"Face 38, Rue Philippe de Lassalle",45.77742065,4.820538471,Vert,69384,13
+7024,Bancel / Chevreul,Rue Bancel,45.74852029,4.840524572,Bleu,69387,21
+8029,Etats-Unis / Lévigne,"78, Boulevard des Etats-Unis",45.73221801,4.865141537,Vert,69388,20
+16005,Vénissieux - Gare,122b Avenue Jules Guesde,45.70853397,4.887024812,Vert,69259,25
+10019,4 Août / Racine,"37, Rue du 4 Août 1789",45.76448294,4.877920626,Vert,69266,30
+10025,Totem,"40, Cours Tolstoï",45.7636407,4.873141088,Vert,69266,16
+8034,Berthelot / Villon,"Face 98, Rue Villon",45.73830234,4.862732783,Vert,69388,13
+3084,Desaix,"128, Rue Paul Bert",45.75726126,4.855200856,Vert,69383,28
+5026,Rue de la Baleine,"13, Quai romain Rolland",45.76338371,4.829011477,Vert,69385,14
+11005,Caluire - Passerelle de la Paix,Chemin Wette Fays,45.78795164,4.853054333,Vert,69034,25
+2025,Mercière / Ferrandière,"1, Rue Ferrandière",45.7620553,4.833205956,Bleu,69382,10
+12003,Vaulx - Bibliothèque,Rue Joseph Blein,45.75706976,4.927321611,Vert,69256,15
+25001,Saint Cyr,"3, Rue de St-Cyr",45.79979143,4.819601869,Vert,69191,12
+5041,L'Homme de la Roche,"Face 56, Quai Pierre Scize",45.76658034,4.820230242,Bleu,69385,21
+7008,Jean Jaurès / Guillotière,"17, Avenue Jean Jaurès",45.7525809,4.846320618,Bleu,69387,10
+4009,Jacquart / Denfert-Rochereau,Rue Denfert-Rochereau,45.77589951,4.825378962,Vert,69384,14
+4022,Place de la Croix-Rousse,Place de la Croix-Rousse,45.77607514,4.832553921,Vert,69384,21
+10047,Lherminier / Pressensé,"2, Avenue du Commandant Lherminier",45.77112324,4.885023598,Vert,69266,15
+10049,Pressensé,"294, Rue Francis de Préssensé",45.76916848,4.896769585,Vert,69266,16
+7021,Challemel Lacour / Gerland,"Face 174, Rue de Gerland",45.72980587,4.838138438,Vert,69387,12
+3016,Liberté / Part-Dieu,"34, Cours de la Liberté",45.75934227,4.842227587,Vert,69383,18
+8015,Jean XXIII,"25, Rue Maryse Bastié",45.74032593,4.874194271,Vert,69388,16
+7035,Marseille / Université,"8, Rue de l'Université",45.75095495,4.839267121,Vert,69387,40
+10120,Salengro / Descartes,"39, Rue Roger Salengro",45.77624638,4.871637165,Vert,69266,15
+5016,Point du Jour / Granges,"49, Avenue du Point du Jour",45.75619393,4.802711079,Vert,69385,13
+9013,Quai Paul Sédaillan,"52, Quai Paul Sédallan",45.78750976,4.814421128,Vert,69389,20
+3012,Place du Château,Place du Château,45.74951708,4.887285723,Vert,69383,25
+10089,Colin / Perroncel,"22, Rue colin",45.77449846,4.874052327,Vert,69266,15
+1031,Place de la Paix,Place de la Paix,45.76802361,4.831741252,Bleu,69381,20
+10004,Tonkin,Rue Salvador Allende,45.77622101,4.862647581,Vert,69266,10
+1013,Martinière,Rue de la Martinière,45.76821832,4.827621704,Vert,69381,11
+26001,Saint Didier - Pasteur / Saint-Cyr,"113, Rue de St Cyr",45.79157368,4.808534635,Vert,69194,17
+9010,Piscine de Vaise,"52, Rue Sidoine Apollinaire",45.77101829,4.796450349,Vert,69389,19
+6028,Récamier / Tête d'Or,"10, Rue Juliette Récamier",45.7643337,4.85349213,Vert,69386,16
+10034,Docteur Damidot,"46, Rue du Docteur Damidot",45.76182011,4.886133866,Vert,69266,18
+3058,Place du Lac,Place du Lac,45.75888562,4.853767894,Vert,69383,19
+7007,Farge / Ayasse,"117, Boulevard Yves Farge",45.73567389,4.827719156,Vert,69387,20
+10072,Jacques Brel,"Face 4, Rue Jacques Brel",45.77422554,4.864286066,Vert,69266,23
+1036,Aveyron,44 Bd de la Croix Rousse,45.77437162,4.832815009,Vert,69381,17
+6022,Place Maréchal Lyautey,"5-6, Place Maréchal Lyautey",45.76937306,4.842317954,Vert,69386,20
+23001,Tassin - Tuileries,13 Promenade des Tuileries,45.76325603,4.778610066,Vert,69244,12
+3004,Bourse du travail,"Face 74, Rue de la Part-Dieu",45.75964531,4.84826656,Vert,69383,27
+3034,Garibaldi / Pensionnat,"52, Rue du Pensionnat",45.75470656,4.853404447,Vert,69383,30
+2030,République / Poulaillerie,"20, Rue de la Poulaillerie",45.76407235,4.835525358,Bleu,69382,32
+8051,Hôpital Saint-Jean de Dieu,"313, Route de Vienne",45.72414205,4.854176443,Vert,69259,20
+7057,Jaurès / Bollier,"218, Avenue Jean Jaurès",45.73472549,4.835496761,Vert,69387,34
+6025,Place d'Helvétie,Place d'Helvétie,45.77318631,4.841959335,Vert,69386,30
+3094,Villette,"74, Rue de la Villette",45.75778788,4.861497365,Vert,69383,38
+5044,Champvert,"67, Rue Edmond Locard",45.76007858,4.798407615,Vert,69385,15
+3069,Dauphiné / Saint-Maximin,"10, rue du Dauphiné",45.74994623,4.864650384,Vert,69383,30
+10006,Charpennes,Place Charles Hernu,45.77022677,4.863132722,Vert,69266,46
+9011,Conservatoire,"Face 40, Quai Chauveau",45.76978221,4.81267622,Vert,69389,19
+10055,Condorcet / Galline,"Face 16, Avenue Galline",45.77645357,4.867114922,Vert,69266,15
+4012,Place Adrien Godien,"38, Cours d'Herbouville",45.77876758,4.841069562,Vert,69384,30
+11004,Branly / Pasteur,"75, Rue Pasteur",45.79158966,4.843331316,Vert,69034,15
+3009,Musée Africain,"Face 150, Cours Gambetta",45.75025331,4.85792503,Vert,69383,22
+16001,Vénissieux - Place Romand,Place Ennemond Romand,45.72575473,4.858350998,Vert,69259,20
+7038,Place Stalingard,Place Stalingrad,45.74957888,4.852965505,Vert,69387,13
+3066,Kimmerling - Faure,"139, Avenue Félix Faure",45.75430081,4.863464102,Vert,69383,19
+9052,Balmont,"332, Boulevard de Balmont",45.78931519,4.799160341,Vert,69389,12
+7036,Gryphe / Montesquieu,"37, Rue Sébastien Gryphe",45.75191144,4.843786405,Vert,69387,25
+9029,Saint Pierre de Vaise,Place Vanderpol,45.77309957,4.807813722,Vert,69389,15
+3099,Place Sainte Anne,"2, Place Saint Anne",45.75704727,4.865331803,Vert,69383,18
+8033,Berthelot / Cazeneuve,11 Rue Paul Cazeneuve,45.73733371,4.865494313,Vert,69388,20
+4025,Chazière,"25, Rue Chazière",45.77542247,4.81788993,Vert,69384,20
+10113,Gare de Villeurbanne,"52, Rue du Poizat",45.75576427,4.891530168,Vert,69266,22
+10110,Mémoire et Société,Rue Hauy,45.75957766,4.882708121,Vert,69266,24
+5053,Saint-Just,"Face 8, Rue de Trion",45.75596664,4.818906448,Vert,69385,18
+6012,Place Puvis de Chavannes,Place Puvis de Chavannes,45.77175709,4.844603636,Vert,69386,10
+8009,Jean XXIII / Mermoz,"Face 74, Boulevard Jean XXIII",45.73647961,4.869805432,Vert,69388,20
+10073,Institut d'Art contemporain,"21, Rue Docteur Dolard",45.76144964,4.872465505,Vert,69266,25
+3005,Saxe / Gambetta,"1, Place Victor Basch",45.75378587,4.848042426,Vert,69383,26
+10121,Parc du Centre,"34, Rue Billon",45.77191193,4.879070707,Vert,69266,16
+10058,Métro Flachet,"276, Cours Emile Zola",45.76709095,4.892428641,Vert,69266,22
+8010,Place Mendès France,"93, Avenue de l'Europe",45.74005165,4.859416413,Vert,69388,20
+3067,Hachette,"2, Rue Jean Renoir",45.75291602,4.863852689,Vert,69383,15
+7055,Servant / Jaboulay,"30, Rue Renan",45.74676623,4.842050699,Vert,69387,16
+17002,Saint Fons - 4 chemins,Place des Quatre Chamins,45.70844373,4.854861078,Vert,69199,11
+21001,La Mulatière - Aquarium,Rue Stéphane Déchant,45.72736933,4.814635477,Vert,69142,24
+5002,Place des Compagnons de la chanson,Place des Compagnons de la chanson,45.75652734,4.796612179,Vert,69385,18
+10084,Doua / Avenue des Arts,"2, Avenue des Arts",45.78351368,4.87127311,Vert,69266,30
+9042,Vaise Docks,"Face 50, Rue des Docks",45.78650844,4.811441217,Vert,69389,19
+7013,Halle Tony Garnier,"8, Avenue Tony Garnier",45.73084224,4.823740407,Vert,69387,20
+14003,Bron - Place Curial,"70, Avenue Mal. de Lattre de Tassigny",45.73667442,4.917100486,Vert,69029,25
+11003,Caluire / La Rochette,Place de la Rochette,45.79167018,4.823597024,Vert,69034,20
+3039,Place Bir-Hakeim,"Face 2, Place Bir-Hakeim",45.75259214,4.855710149,Vert,69383,19
+3053,Gambetta / Jusserand,"97, Avenue Jules Jusserand",45.75111241,4.855585088,Vert,69383,13
+2024,République / Maupin,"9, Rue Maupin",45.75873908,4.834076515,Vert,69382,25
+1035,Quai Lassagne,"3, Quai André Lassagne",45.77220147,4.837911793,Vert,69381,16
+2014,Jacobins,"1, Rue Jean de Tournes",45.7607517,4.834304229,Vert,69382,26
+6037,Cité Internationale / Interpol,Allée Achille Lignon,45.78230611,4.849343981,Vert,69386,27
+2017,République / Ferrandière,"Face 30, Rue Ferrandière",45.762174,4.835970694,Vert,69382,25
+10023,Jaurès / Saint Exupéry,"54, Rue Jean Jaurès",45.75765232,4.883470951,Vert,69266,25
+8058,Longefer / Krüger,"10, rue Paul Kruger",45.73867144,4.878117422,Vert,69388,16
+7014,Marseille / Félissent,"3, Rue Félissent",45.75298634,4.841415287,Vert,69387,30
+8007,Frères Lumière,Rue des Frères Lumières,45.74501776,4.866432601,Vert,69388,15
+16002,Vénissieux - Levy - Vienne,"1, Avenue du Docteur Georges Lévy",45.71939881,4.854801576,Vert,69259,18
+10059,Anatole France / Zola,"Face 145, Rue Anatole France",45.76887632,4.884241513,Vert,69266,13
+8040,Ambroise Paré,"39, Boulevard Ambroise Paré",45.73629951,4.883681688,Vert,69388,24
+3071,BioParc,"60, Avenue Rockefeller",45.740486,4.888082508,Orange,69383,20
+9014,Quai du Commerce,"12, Quai du Commerce",45.78348566,4.811487843,Gris,69389,23
+1016,Pêcherie,"6, Rue de la Platière",45.76595473,4.831178125,Vert,69381,17
+5032,Ménival / Eisenhower,"43, Avenue de Ménival",45.75675523,4.783245908,Bleu,69385,12
+10074,Zola / Passage Rey,"141, Cours Emile Zola",45.77009784,4.876690418,Orange,69266,19
+10115,Place d'Espagne / Stade Kruger,"143, Avenue Paul Kruger",45.7541767,4.905299189,Vert,69266,22
+10030,Greuze,"2, Rue Greuze",45.77384944,4.89384481,Vert,69266,18
+6005,Place Edgar Quinet,"6, Place Edgar Quinet",45.76576559,4.844731893,Vert,69386,20
+10102,Doua / Gaston Berger,Avenue Gaston Berger,45.78099407,4.871222321,Orange,69266,30
+6023,Quai Sarrail,"Face 4, Quai Général Sarrail",45.76682962,4.841139339,Vert,69386,14
+1020,Terreaux / Chenavard,"11, Rue Chenavard",45.7667671,4.832931488,Vert,69381,18
+8020,Moulin à Vent,2 Rue du Moulin à Vent,45.72967613,4.854181941,Vert,69388,22
+8059,Laënnec / Pinel,Rue Paradin,45.73537251,4.889538926,Orange,69388,15
+1003,Place Sathonay,"4, Place Sathonay",45.76926585,4.830079789,Bleu,69381,15
+2009,Confluence / Docks,"41, Quai Rambaud",45.73962759,4.815025931,Vert,69382,26
+10039,Bouvier,"Face 2, Rue du Professeur Emile Bouvier",45.77946431,4.891580951,Vert,69266,16
+6006,Boulevard des Belges,"49, Boulevard des Belges",45.77332704,4.851989499,Vert,69386,15
+10002,INSA,Avenue Albert Einstein,45.78221651,4.876955025,Vert,69266,40
+7016,Place St Louis,Rue de la Madeleine,45.74908036,4.847739943,Vert,69387,15
+12004,Vaulx - Hôtel de ville,Rue Maurice Audin,45.77817182,4.920516711,Vert,69256,30
+5015,Fulchiron,"4, Quai Fulchiron",45.75200118,4.821661798,Vert,69385,19
+3089,Trarieux / Lacassagne,"221, Avenue Lacassagne",45.74530081,4.889042036,Vert,69383,24
+5055,Buyer / Apollinaire,"103, Avenue Barthélémy Buyer",45.76201329,4.80275989,Vert,69385,22
+10048,Place Marengo,"54, Avenue Marc Sangnier",45.75914352,4.875993556,Vert,69266,27
+10027,Mairie de Villeurbanne,"3, Avenue Aristide Briand",45.76683061,4.879893867,Vert,69266,26
+1012,Ampère / Bourse,"29, Rue de la Bourse",45.76581138,4.836895741,Vert,69381,26
+10036,Stalingrad,"123, Boulevard Stalingrad",45.77435683,4.859154586,Vert,69266,21
+2018,Hôtel Dieu / Pont de la Guillotière,"Face 26, Quai Jules courmont",45.75741753,4.837062372,Vert,69382,50
+7064,CROUS,"96, Rue Chevreul",45.74543052,4.847780277,Vert,69387,17
+5001,Place Varillon (funiculaire St-Just),"63, Rue de Trion",45.75730032,4.815090011,Vert,69385,23
+3018,Créqui / Voltaire,Rue de Créqui,45.75669834,4.848403486,Bleu,69383,30
+10111,Charles Hernu,"110, Cours Vitton",45.77031053,4.862002499,Vert,69386,20
+2013,Célestins,"Face 2, Place des Célestins",45.75993983,4.832071611,Vert,69382,22
+10119,Villeurbanne Saint-Jean,"2, Rue des Acacias",45.78044582,4.904488846,Vert,69266,12
+7053,Jaurès / Thibaudière,"Face 27, Rue de la Thibaudière",45.7503448,4.845048253,Vert,69387,28
+6035,Cité Internationale,Quai Charles de Gaulle,45.78542142,4.854124073,Vert,69386,21
+2021,Bayard / Rambaud,"15, Quai Rambaud",45.74591658,4.817173609,Vert,69382,30
+4023,Pont Masaryk,"Face 45, Quai Joseph Gillet",45.77827801,4.810631758,Vert,69384,22
+10091,Château Gaillard / Fort,"28, Rue Louis Fort",45.77474954,4.887971317,Vert,69266,16
+9044,Masset / Saint-Pierre de Vaise,"86, Rue Saint Pierre de Vaise",45.77047692,4.800900483,Vert,69389,16
+28001,Fontaines S/S - Quai JB Simon,Quai Jean Baptiste Simon,45.83246572,4.848779233,Vert,69088,20
+2037,Place des Archives,"18, Rue Dugas Montbel",45.74796914,4.824861728,Vert,69382,40
+10018,Tolstoï / Florian,"4, Rue Florian",45.76180519,4.880722405,Vert,69266,21
+2004,Perrache / Carnot,Place Carnot,45.75009964,4.828051501,Vert,69382,18
+10079,Anatole France / Barbusse,"103, Rue Anatole France",45.7681304,4.879161489,Vert,69266,20
+14001,Bron - Centre Nautique,"22, Rue de la Marne",45.74292484,4.908621338,Bleu,69029,13
+7009,Jean Jaurès,"175, Avenue Jean Jaurès",45.7375181,4.83750892,Vert,69387,16
+7045,Parc des Berges,"Face 40, Avenue Leclerc",45.73774096,4.824487516,Vert,69387,25
+8052,Clinique Montplaisir,"2, Avenue des Frères Lumière",45.74708261,4.860190852,Bleu,69388,16
+6011,Mairie du 6e,"58, Rue de Sèze",45.76840417,4.849496724,Vert,69386,23
+7061,Jaurès / Université,"53, Rue de l'Université",45.74853743,4.843249334,Vert,69387,20
+10013,Cusset,"13, Rue Pierre Voyant",45.76504227,4.901132893,Vert,69266,20
+2005,Confluence Hôtel de Région,"101, Cours Charlemagne",45.74053832,4.819179518,Orange,69382,32
+8002,Place Ambroise Courtois,Place Ambroise Courtois,45.74529262,4.871678963,Vert,69388,20
+10007,Piaton / Condorcet,Avenue Piaton,45.77421518,4.867504213,Vert,69266,20
+9033,Gorge de Loup,49 bis Esplanade Lina Cretet,45.76736548,4.8056277,Vert,69389,40
+8061,Stade Vuillermet,"186, Avenue Paul Santy",45.72540372,4.881294892,Vert,69388,18
+1023,Croix Rousse / Perfetti,"Face 23, Boulevard de la Croix Rousse",45.77225384,4.819460862,Vert,69381,20
+3101,Patinoire Baraban,"Face 52, Rue Baraban",45.76205167,4.868500351,Vert,69383,20
+4021,Tabareau,Rue Tabareau,45.77408067,4.825159712,Vert,69384,10
+3103,Place Danton,"4, Place Danton",45.75481245,4.857574373,Vert,69383,18
+6031,Lafayette / Corneille,"64, Rue Pierre Corneille",45.76375948,4.843777341,Vert,69386,13
+10053,Rossellini / 11 Novembre,"29, Boulevard du 11 Novembre 1918",45.77940831,4.862902169,Vert,69266,30
+6039,Garibaldi / Vauban,"Face 99, Rue Bugeaud",45.76669219,4.852085981,Vert,69386,20
+6021,Garibaldi,"46, Rue Garibaldi",45.77069748,4.849935729,Bleu,69386,11
+2026,République / Paufique,"22, Rue Louis Paufique",45.75938096,4.835399202,Vert,69382,28
+22001,Sainte Foy - Place Saint-Luc,Place Saint-Luc,45.74956541,4.800896024,Vert,69202,15
+9003,Place Valmy,"1, Rue Roquette",45.775675,4.805303665,Vert,69389,16
+5005,Saint-Paul,Place Saint-Paul,45.76627174,4.827432123,Vert,69385,23
+4041,Boussange / Austerlitz,"17, rue d'Austerlitz",45.77550236,4.835062545,Vert,69384,18
+6043,Cité Internationale - Cinéma,"80, Quai Charles de Gaulle",45.7847015,4.851908106,Vert,69386,32
+3088,Place Guichard,"65, Rue Moncey",45.75881521,4.846453226,Vert,69383,16
+5004,Saint-Jean,"2, Place Edouard Commette",45.76048374,4.82656505,Vert,69385,39
+10118,Voyant / Chambord,"92, Rue Voyant",45.76715331,4.900599161,Vert,69266,22
+8060,Santy / Beauvisage,"Face 9, Rue Pierre Verger",45.73168331,4.874127533,Vert,69388,17
+1022,Place Tolozan,Place Tolozan,45.76960059,4.837608437,Vert,69381,36
+10001,IUT - Feyssine,Rue de la Technologie,45.78563246,4.882410402,Vert,69266,30
+8030,Laënnec,Rue Nungesser et Coli,45.74134872,4.879723164,Orange,69388,16
+3100,Sisley /  Dauphiné,"4, Rue Professeur Paul Sisley",45.75282751,4.868768771,Vert,69383,17
+2001,Bellecour / République,"4, Place Le Viste",45.7579851,4.834593822,Vert,69382,18
+2028,Sainte-Blandine,"60, Cours Charlemagne",45.7444223,4.82214287,Vert,69382,16
+2006,Place de l'Hippodrome,Place de l'Hippodrome,45.74558155,4.823532673,Vert,69382,24
+3021,Place de la Ferrandière,"51, Avenue Georges Pompidou",45.7594734,4.869342897,Vert,69383,20
+2041,Sala / Charité,"41, Rue Sala",45.75447328,4.833011085,Vert,69382,21
+9040,Place de la Rhodiacéta,"53, Rue Chapeau Rouge",45.77099064,4.807580414,Vert,69389,12
+6016,Viabert / Thiers,Rue de la Viabert,45.76598798,4.862092278,Vert,69386,16
+6008,Place Jules Ferry,"17, Rue des Emeraudes",45.76841226,4.859070557,Vert,69386,20
+2019,Sucrière,Place Chevalier de Saint-Georges,45.73618158,4.815335029,Vert,69382,20
+17003,Saint Fons - Théatre,"59, Rue Carnot",45.7080856,4.861775604,Vert,69199,18
+5007,Place de Trion,Place de Trion,45.75790631,4.813134953,Vert,69385,16
+3015,Servient / Garibaldi,"Face 112, Rue Servient",45.76077741,4.852678991,Vert,69383,17
+8037,Cazeneuve,"Face 42, Rue Paul Cazeneuve",45.73402009,4.862902379,Vert,69388,19
+7034,Piscine du Rhône,"Face 8, Quai Claude Bernard",45.75361071,4.838220972,Vert,69387,31
+10064,4 août 1789,"97, Rue du 4 août 1789",45.76479917,4.884270533,Vert,69266,15
+8050,Bataille / Krüger,"Face au 140, Rue Bataille",45.73626799,4.879737377,Vert,69388,18
+7010,Centre Berthelot,"105, Rue Pasteur",45.74735617,4.835999698,Vert,69387,19
+30001,Rillieux - Canellas,18 route de Genève,45.80509134,4.884743873,Vert,69286,12
+1021,Terreaux / Beaux Arts,"8, Rue du Président Edouard Herriot",45.767041,4.834283906,Vert,69381,11
+2007,Patinoire Charlemagne,"100, Cours Charlemagne",45.7426115,4.82047167,Vert,69382,37
+3044,Quai Augagneur,"Face 3, Quai Victor Augagneur",45.76196513,4.841053431,Vert,69383,19
+33001,Albigny - Gare,Place de la Gare,45.87499349,4.833002136,Vert,69003,18
+6004,Foch,"11, Cours Franklin Roosevelt",45.76885137,4.844764939,Vert,69386,20
+8025,Dumont / Jouvet,"16, Rueue Santos Dumont",45.74444618,4.860887175,Vert,69388,17
+3040,Faure / Danton,"87, Avenue Félix Faure",45.75351829,4.857737618,Vert,69383,35
+10061,République,"105, cours Emile Zola",45.77078384,4.872959389,Vert,69266,17
+5036,La Salette,"104, Rue Commandant Charcot",45.74961727,4.795531093,Vert,69385,15
+8003,Claude Bernard Lyon I,"16, Rue Guillaume Paradin",45.73814006,4.886880309,Orange,69388,16
+1032,Pizay,"Face 22, Rue Pizay",45.76720042,4.836391685,Vert,69381,22
+4005,Place Bertone,Rue du Chariot d'Or,45.77761738,4.834500942,Orange,69384,12
+17001,Saint Fons - Arsenal,"Face au 40, Avenue Jean Jaurès",45.7123448,4.855274123,Vert,69199,27
+7052,Parc Blandan,"37, Rue du Repos (entrée parc Blandan)",45.74596373,4.851196108,Vert,69387,25
+6036,Musée d'Art Contemporain,Allée Achille Lignon,45.78388161,4.852140403,Vert,69386,23
+7005,Debourg,"259t, Avenue Jean Jaurès",45.73175355,4.833961794,Vert,69387,20
+5030,Charcot / Résidence universitaire,"Face 30, Rue Cdt Charcot",45.75503109,4.807785054,Vert,69385,32
+8039,Pierre Delore,"Face 2, Rue Pierre Delore",45.73863588,4.852400184,Vert,69388,20
+7062,Garibaldi / Domer,"Face 327, Rue Garibaldi",45.74773274,4.85162737,Vert,69387,19
+7026,Baldassini / Gerland,"25, Rue Jean Baldassini",45.72769678,4.83738209,Vert,69387,20
+1005,Meissonier,Place Meissonier,45.76608507,4.832833583,Vert,69381,16
+6040,Les Halles,"149, Rue Boileau",45.76405761,4.849930546,Vert,69386,15
+2022,Place Carnot,Place Carnot,45.75122705,4.826890835,Vert,69382,30
+12001,Vaulx - La Soie,Rue de la Poudrette,45.76081319,4.920603946,Vert,69256,25
+7001,Place Gabriel Péri,"4, Place Gabriel Péri",45.75487902,4.843675082,Vert,69387,20
+2002,Bellecour / Saint Exupéry,"Face 34, Place Bellecour",45.75815691,4.830434695,Vert,69382,40
+3087,Part-Dieu / Garibaldi,"4, Boulevard Eugène Deruelle",45.76275116,4.852427772,Vert,69383,20
+9004,Gare de Vaise,"Face 14, Rue du 24 Mars 1852",45.77978198,4.804665331,Vert,69389,22
+5008,Sainte-Irénée,Place Sainte Irénée,45.75494588,4.812421225,Vert,69385,20
+34002,Neuville - Stade,"Face au 27, Route de Lyon",45.87087625,4.839598537,Vert,69143,15
+8004,Mairie du 8e,"Face 29, Avenue Jean Mermoz",45.735151,4.872817388,Vert,69388,21
+2016,Place Regaud,Place Regaud,45.76307693,4.834286688,Vert,69382,12
+3080,Part-Dieu / Villette,Rue de la Villette,45.76005506,4.861673881,Orange,69383,30
+5029,Place Gerson,Place Gerson,45.76705446,4.827047507,Bleu,69385,20
+14005,Bron - Université,"5, Avenue Pierre Mendès France",45.72266073,4.9152085,Vert,69029,30
+27001,Collonges - Gare,"2, Quai de la Libération",45.83086633,4.846978507,Vert,69063,24
+7051,Guillotière / Veyron,"214, Grande Rue de la Guillotière",45.747805,4.856454001,,69387,0
+32001,Couzon - Centre,Quai Jean Lavergne,45.84599769,4.832412134,Vert,69068,17
+7004,Mairie du 7e,Place Jean Macé,45.74656017,4.842341258,Vert,69387,30
+2039,Charité / Récamier,"86, Rue de la Charité",45.7492534,4.829844126,Vert,69382,17
+7019,Croix Barret / Artillerie,"5, Rue Croix-Barret",45.73679081,4.841152089,Vert,69387,32
+20002,Oullins - Mairie,"4, Rue Etienne Dolet",45.71400142,4.806544334,Vert,69149,18
+10046,Charmettes / Zola,"25, Rue des Charmettes",45.77074107,4.867333829,Vert,69266,23
+16003,Vénissieux - Joliot Curie / Sembat,Boulevard Irène Joliot Curie,45.71545295,4.878235061,Vert,69259,25
+10122,Verdun / Desgrand,"13, Rue de Verdun",45.78405134,4.897085924,Vert,69266,21
+14004,Bron - Mairie,"5, Rue de Verdun",45.73394553,4.908720682,Vert,69029,23
+10015,Poudrette / Musset,"112, Rue de la Poudrette",45.75788295,4.921141712,Vert,69266,18
+9015,Saint-Cyr,"51t, Rue de Saint-Cyr",45.78282823,4.807296359,Vert,69389,30
+34001,Neuville - Quai Pasteur,"5, Quai Pasteur",45.87660899,4.838623726,Vert,69143,20
+3079,Place Louise,"4, Place Louise",45.75120525,4.884820464,Vert,69383,16
+28002,Fontaines S/S - Gambetta,Place des Rendez vous,45.835406,4.8457,Vert,69088,20
+7025,Lacour / Artillerie,Rue Challemel Larcour,45.72945513,4.844177872,Vert,69387,20
+5031,Ménival / Joliot Curie,Rue Joliot Curie,45.75464051,4.788148884,Vert,69385,20
+7030,Quartier Général Frère,"31, Boulevard Yves Farge",45.74316454,4.834168875,Vert,69387,30
+9009,Berlioz / Chalinel,"Face 31, Rue Albert Chalinel",45.80111981,4.825272562,Vert,69389,15
+10124,Salengro / Courteline,"67, Avenue roger Salengro",45.7768977,4.87645879,Vert,69266,24
+8057,Vienne / Montagny,184 route de Vienne,45.73248198,4.853409975,Vert,69388,20
+6007,Masséna,"47, Rue Tête d'Or",45.76966013,4.852372783,Vert,69386,27
+2010,Confluence / Darse,"2, Allée Andrée Mure",45.74341409,4.815854361,Vert,69382,22
+5045,Valdo / Rivet,Rue Jeunet,45.75048148,4.788774121,Vert,69385,18
+10083,Château Gaillard / Bienvenus,"Face 31, Rue des Bienvenus",45.77786492,4.884244286,Vert,69266,15
+10071,Lycée Marie Curie,"33, Boulevard Eugène Réguillon",45.76152797,4.89569022,Vert,69266,15
+3038,Vivier Merle / Paul Bert Est,"65, Boulevard Vivier Merle",45.75723142,4.858908367,Vert,69383,20
+3070,Rebatel / Saint-Maximin,"62, Rue St Maximin",45.74781943,4.872269871,Orange,69383,30
