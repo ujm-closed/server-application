@@ -1,5 +1,7 @@
 package com.ujm.semweb.model;
 
+import org.apache.jena.vocabulary.RDFS;
+
 import lombok.Data;
 
 @Data
@@ -9,9 +11,12 @@ public class RailwayStation {
   public String stationLabel;
   public String cityUri;
   public String stationCoordination;
- public String comment;
- public String coordination;
- public String instanceOf;
-  
+  public String comment;
+  public String coordination;
+  public String lat;
+  public String long_;
+  public String instanceOf;
+  public String branchCode;
+ 
 	
 }
