@@ -505,7 +505,7 @@ public class DumpData {
 	public void dumpBiksStationGraph() {
 		String a="https://www.wikidata.org/wiki/Property:P31";
 		String wd="https://www.wikidata.org/wiki/";
-		String fileName = "src/main/resources/data/hospital.csv";
+		String fileName = "src/main/resources/data/lyon_bike_station.csv";
 		String geo="http://www.w3.org/2003/01/geo/wgs84_pos#";
 		String organisationID="https://www.wikidata.org/wiki/Property:P1901";
 		String organisation="https://www.wikidata.org/wiki/Property:P2541";
@@ -600,9 +600,8 @@ public class DumpData {
 		        }
 		        
 		        
-				if(count%10==0) {
+				if(count%100==0) {
 					bikeStationGraph+="}";
-				System.out.println("SSSSSSSSSSSSSSSSSSSSS");
 				  LOG.info(bikeStationGraph);
 				  LOG.info("STORING RDF DATA TO DB AT >>>>>> "+count);
 //				  saveToGraphDb(cityGraph);
