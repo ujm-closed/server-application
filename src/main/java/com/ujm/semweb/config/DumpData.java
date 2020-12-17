@@ -47,10 +47,13 @@ import java.util.logging.Logger;
 public class DumpData {
 	private final Logger LOG = Logger.getLogger(DumpData.class.getName());
 	// GraphDB SemWeb PersonData
-	@Value("${GRAPH_REPO_QUERY}")
-    private  String GRAPH_REPO_QUERY ;
-	@Value("${GRAPH_REPO_UPDATE}")
-    private String GRAPH_REPO_UPDATE ;
+//	@Value("${GRAPH_REPO_QUERY}")
+
+    private  String GRAPH_REPO_QUERY =
+    		"http://localhost:7200/repositories/PersonData";
+//	@Value("${GRAPH_REPO_UPDATE}")
+    private String GRAPH_REPO_UPDATE = 
+    		"http://localhost:7200/repositories/PersonData/statements" ;
     @PostConstruct
 	public void dumpData() {
   		//FUSEKI
