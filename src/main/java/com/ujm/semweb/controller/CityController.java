@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ujm.semweb.model.City;
+import com.ujm.semweb.model.Weather;
 import com.ujm.semweb.service.CityService;
+import com.ujm.semweb.service.WeatherService;
 
 @RestController
 @RequestMapping(value = "/api/city/")
@@ -23,6 +25,8 @@ import com.ujm.semweb.service.CityService;
 public class CityController {
 	@Autowired 
 	private CityService cityService;
+	@Autowired 
+	private WeatherService weatherService;
 	@CrossOrigin
 	@RequestMapping(method=RequestMethod.GET, path = "all")
 	public ResponseEntity getAllCity() throws Exception {
@@ -34,6 +38,18 @@ public class CityController {
 	public ResponseEntity searchCity(@RequestBody String cityName) throws Exception {
 			List<City> cities=cityService.searchCity(cityName);
 	        return  ResponseEntity.ok(cities);
+	}
+	@CrossOrigin
+	@RequestMapping(method=RequestMethod.POST, path = "save")
+	public ResponseEntity save(@RequestBody City city) throws Exception {
+			cityService.save(city);
+	        return  ResponseEntity.ok("ok");
+	}
+	@CrossOrigin
+	@RequestMapping(method=RequestMethod.POST, path = "city/weather")
+	public ResponseEntity saveWeather(@RequestBody Weather weather) throws Exception {
+		weatherService.saveWeatherData(weather);
+	        return  ResponseEntity.ok("ok");
 	}
 	
 }

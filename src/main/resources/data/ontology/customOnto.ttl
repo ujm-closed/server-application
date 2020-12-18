@@ -1,0 +1,253 @@
+@prefix : <http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7> .
+
+<http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7> rdf:type owl:Ontology ;
+                                                                                rdfs:comment """A time table ontology that describes various train schedules
+based on the specific station""" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#hasAvailability
+:hasAvailability rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#inAdministrationOf
+:inAdministrationOf rdf:type owl:ObjectProperty ;
+                    rdfs:domain :TimeTable .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#locatedIn
+:locatedIn rdf:type owl:ObjectProperty ;
+           rdfs:domain :TransportTimeTable .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#partOf
+:partOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#recordedAtTime
+:recordedAtTime rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#sameAs
+:sameAs rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#seeAlso
+:seeAlso rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#additionalProperty
+:additionalProperty rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :TransportTimeTable .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#arrivingAt
+:arrivingAt rdf:type owl:DatatypeProperty ;
+            rdfs:domain :TransportTimeTable ;
+            rdfs:range xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#coordinates
+:coordinates rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#definedBy
+:definedBy rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#definedOn
+:definedOn rdf:type owl:DatatypeProperty ;
+           rdfs:domain :TimeTable ;
+           rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#departingAt
+:departingAt rdf:type owl:DatatypeProperty ;
+             rdfs:domain :TransportTimeTable ;
+             rdfs:range xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#geoLat
+:geoLat rdf:type owl:DatatypeProperty ;
+        rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#geoLong
+:geoLong rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#hasHumidiity
+:hasHumidiity rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#hasMaxPressure
+:hasMaxPressure rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#hasRouteId
+:hasRouteId rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#hasRouteIdentifier
+:hasRouteIdentifier rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :TransportTimeTable ;
+                    rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#hasRouteLabel
+:hasRouteLabel rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :additionalProperty ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#hasServiceId
+:hasServiceId rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#hasStopName
+:hasStopName rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :additionalProperty ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#hasSunriseTime
+:hasSunriseTime rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:range xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#hasSunsetTime
+:hasSunsetTime rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:range xsd:dateTimeStamp .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#hasTripId
+:hasTripId rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#hasValidity
+:hasValidity rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#hasWeatherMax
+:hasWeatherMax rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#hasWeatherMin
+:hasWeatherMin rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#hasWindSpeed
+:hasWindSpeed rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#identifiedBy
+:identifiedBy rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#mainTemperature
+:mainTemperature rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#mainWeatherDescription
+:mainWeatherDescription rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty ;
+                        rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#numberOfAvailability
+:numberOfAvailability rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Availability ;
+                      rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#recordedAt
+:recordedAt rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Availability ;
+            rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#revisedIn
+:revisedIn rdf:type owl:DatatypeProperty ;
+           rdfs:domain :TransportTimeTable ;
+           rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#serviceProvidedBy
+:serviceProvidedBy rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#transportMean
+:transportMean rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :additionalProperty .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#visibility
+:visibility rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#weatherDescription
+:weatherDescription rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#weatherFeelsLike
+:weatherFeelsLike rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:range xsd:integer .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#Availability
+:Availability rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#TimeTable
+:TimeTable rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#TransportTimeTable
+:TransportTimeTable rdf:type owl:Class ;
+                    rdfs:subClassOf :TimeTable .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

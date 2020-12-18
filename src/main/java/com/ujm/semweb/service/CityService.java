@@ -20,6 +20,9 @@ public class CityService {
 	public List<City> searchCity(String cityName) {
 		return cityDao.searchEntityByCityName(cityName);
 	}
+	public void save(City city) {
+		 cityDao.createNewCityRdf(city);
+	}
 	
 	
 }
