@@ -21,6 +21,7 @@ import com.ujm.semweb.model.RailwayStation;
 import com.ujm.semweb.service.BikeService;
 import com.ujm.semweb.service.CityService;
 import com.ujm.semweb.service.HospitalService;
+import com.ujm.semweb.service.RestService;
 
 @RestController
 @RequestMapping(value = "/api/bikestation/")
@@ -34,5 +35,22 @@ public class BikeStationController {
 	public ResponseEntity searchCity(@PathVariable("cityName") String cityName) throws Exception {
 			List<BikeStation> cities=bikeService.searchCity(cityName);
 	        return  ResponseEntity.ok(cities);
+	}
+	 @CrossOrigin
+    @RequestMapping(method=RequestMethod.POST, path = "/upload")
+    public ResponseEntity<String> uploadFile(@RequestBody List<BikeStation> bikeStations) throws IOException {
+    	try {
+    		this.bikeService.saveRdf(bikeStations);
+            return  ResponseEntity.ok("Success");
+		} catch (Exception e) {
+			 return  ResponseEntity.ok(e.getMessage());
+		}
+    }
+	@CrossOrigin
+	@RequestMapping(method=RequestMethod.GET, path = "restTest")
+	public ResponseEntity searchCity() throws Exception {
+			RestService restService=new RestService();
+			restService.test();
+	        return  ResponseEntity.ok("PUNDA");
 	}
 }

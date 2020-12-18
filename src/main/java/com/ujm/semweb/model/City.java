@@ -10,4 +10,6 @@ public class City {
 	 public String coordination;
 	 public String instanceOf;
 	 public String country;
+	 public String lat;
+	 public String long_;
 }

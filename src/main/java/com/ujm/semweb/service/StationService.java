@@ -19,6 +19,13 @@ public class StationService {
 	public List<RailwayStation> searchByCityName(String cityName) {
 		return stationDao.getAllStationByCityName(cityName);
 	}
+	public List<RailwayStation> getTimeTableDataByCityName(String cityName) {
+		return stationDao.getStatisticalDataTimeTableV2(cityName);
+	}
+	public void saveRealTimeData(List<RailwayStation> stations) {
+		 stationDao.saveRealTimeRdf(stations);
+	}
+	
 	
 	
 }

@@ -35,6 +35,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opencsv.CSVReader;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -46,12 +47,7 @@ import java.util.logging.Logger;
 @Component
 public class DumpData {
 	private final Logger LOG = Logger.getLogger(DumpData.class.getName());
-// GraphDB SemWeb PersonData
-//	@Value("${GRAPH_REPO_QUERY}")
-//	private  String GRAPH_REPO_QUERY ;
-//	@Value("${GRAPH_REPO_UPDATE}")
-//    private String GRAPH_REPO_UPDATE ;
-//TESTING
+
     private  String GRAPH_REPO_QUERY =
     		"http://localhost:7200/repositories/SemWeb";
     private String GRAPH_REPO_UPDATE = 
@@ -59,215 +55,13 @@ public class DumpData {
     @PostConstruct
 	public void dumpData() {
   		LOG.info("RDF DATA STORING PROCESS INITIATED");
-//		dumpTrainStationData();
-//		dumpCities();
+		dumpTrainStationGraphV2();
+		dumpCitiesGraphV2();
+		dumpHospitalGraph();
+		dumpBiksStationGraphRennes();
+		dumpBiksStationGraphLyon();
   		LOG.info("RDF DATA STORING PROCESS COMPLETED");
 	}
-
-//  	PROBLEMS |(LA )|<|>
-  	
-	public void dumpCities() {
-	String a="https://www.wikidata.org/wiki/Property:P31";
-	String wd="https://www.wikidata.org/wiki/";
-	String fileName = "src/main/resources/data/cities.csv";
-	String geo="http://www.w3.org/2003/01/geo/wgs84_pos#";
-	String administrativeTerorityOf="https://www.wikidata.org/wiki/Property:P131";
-	String property="https://www.wikidata.org/wiki/Property:";
-	String coordinate="https://www.wikidata.org/wiki/Property:P625";
-	 ClassLoader classLoader = getClass().getClassLoader();
-//	 File cityFile=new File(classLoader.getResource("queries").getFile());
-	 File cityFile=new File(fileName);
-	 Model model =ModelFactory.createDefaultModel();
-	 try (CSVReader csvReader = new CSVReader(new FileReader(cityFile))) {
-	    String[] values = null;
-	    int count=0;
-	    while ((values = csvReader.readNext()) != null) {
-	    	//SKINPING HEADING
-	    	if(count==0) {
-	    		count++;
-	    		continue;
-	    	}
-	      
-//	    	System.out.println(values[3].split(" ")[0].replace("Point(",""));
-//	    	System.out.println(values[3].split(" ")[1].replace(")",""));
-	          
-	        Resource city
-			  = model.createResource(values[0])
-//			         .addProperty(model.createProperty(a), wd+"Q484170")
-					 .addProperty(model.createProperty(a), model.createProperty(wd+"Q484170"))
-					 .addProperty(model.createProperty(property+"P17"), model.createProperty(wd+"Q142"))
-			         .addProperty(RDFS.label,model.createLiteral(values[1], "en"))
-			         
-			         .addProperty(RDFS.comment,model.createLiteral(values[1], "en"))
-			         .addProperty(model.createProperty(property+"P625"),model.createLiteral(values[3], "en"))
-//			         .addProperty(model.createProperty(geo+"long"),model.createTypedLiteral(Double.valueOf(values[3].split(" ")[0].replace("Point(",""))))
-//			         .addProperty(model.createProperty(geo+"lat"),model.createTypedLiteral(Double.valueOf(values[3].split(" ")[1].replace("Point(",""))))
-		    ;    
-	    }
-	 }
-	 catch(Exception ex) {
-		 ex.printStackTrace();
-	 }
-	 saveToTrippleStore(model);
-	}
-	
-	public void dumpCitiesGraph() {
-		String a="https://www.wikidata.org/wiki/Property:P31";
-		String wd="https://www.wikidata.org/wiki/";
-		String fileName = "src/main/resources/data/cities.csv";
-		String geo="http://www.w3.org/2003/01/geo/wgs84_pos#";
-		String administrativeTerorityOf="https://www.wikidata.org/wiki/Property:P131";
-		String property="https://www.wikidata.org/wiki/Property:";
-		String coordinate="https://www.wikidata.org/wiki/Property:P625";
-		 ClassLoader classLoader = getClass().getClassLoader();
-		 File cityFile=new File(fileName);
-		 Model model =ModelFactory.createDefaultModel();
-		 String cityGraph="INSERT DATA {";
-		 try (CSVReader csvReader = new CSVReader(new FileReader(cityFile))) {
-		    String[] values = null;
-		    int count=0;
-		    LOG.info("PREPARING CITY RDF DATA");
-		    while ((values = csvReader.readNext()) != null) {
-		    	//SKINPING HEADING
-		    	if(count==0) {
-		    		count++;
-		    		continue;
-		    	}
-		        String cityQid=values[0];
-				//SettingUp-InstanceOf
-		        cityGraph+="<"+cityQid+"> "
-				+"<"+a+"> "
-				+"<"+model.createProperty(wd+"Q484170").toString()+"> . ";
-				//SettingUp-Country
-				cityGraph+="<"+cityQid+"> "
-				+"<"+model.createProperty(property+"P17").toString()+"> "
-				+"<"+model.createProperty(property+"P17").toString()+"> . ";
-				//SettingUp-Label
-				cityGraph+="<"+cityQid+"> "
-				+"<"+RDFS.label.toString()+"> "
-				+" \""+values[1].toString()+"\"@en . ";
-				//SettingUp-Comment
-				cityGraph+="<"+cityQid+"> "
-				+"<"+RDFS.comment.toString()+"> "
-				+" \""+values[1].toString()+"\"@en . ";
-				//SettingUp-Coordinate
-				cityGraph+="<"+cityQid+"> "
-				+"<"+model.createProperty(property+"P625").toString()+"> "
-				+" \""+values[3].toString()+"\" . ";
-//				model.createTypedLiteral(Double.valueOf(stopLat)).getDatatypeURI()
-				if(count%100==0) {
-				  cityGraph+="}";
-				  LOG.info(cityGraph);
-				  LOG.info("STORING RDF DATA TO DB AT >>>>>> "+count);
-				  saveToGraphDb(cityGraph);
-				  LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
-				  cityGraph="INSERT DATA {";
-				}
-				count++;
-		    }
-		    cityGraph+="}";
-
-		    LOG.info(cityGraph);
-		    LOG.info("STORING RDF DATA TO DB>>>>>>");
-		    saveToGraphDb(cityGraph);
-		    LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
-		 }
-		 catch(Exception ex) {
-			 ex.printStackTrace();
-		 }
-	}
-	
-	public void dumpTrainStationGraph() {
-		//PREFIX
-		String ex="http://www.example.com/";
-		String exCommune="http://www.example.com/commune/";
-		String exTrainStation="http://www.example.com/trainstation/";
-		String rdfs= "http://www.w3.org/2000/01/rdf-schema#";
-		String xsd= "http://www.w3.org/2001/XMLSchema#" ;
-		
-		String a="https://www.wikidata.org/wiki/Property:P31";
-		String wd="https://www.wikidata.org/wiki/";
-		String fileName = "src/main/resources/data/train_stations.xls";
-		String geo="http://www.w3.org/2003/01/geo/wgs84_pos#";
-		String administrativeTerorityOf="https://www.wikidata.org/wiki/Property:P131";
-		String coordinate="https://www.wikidata.org/wiki/Property:P625";
-		String property="https://www.wikidata.org/wiki/Property:";
-		//
-		POIFSFileSystem fs;
-		Model model =ModelFactory.createDefaultModel();
-		String stationGraph="INSERT DATA {";
-		LOG.info("PREPARING TRAIN STATION GRAPH");
-		try {
-			fs = new POIFSFileSystem(new FileInputStream(fileName));
-		
-		    HSSFWorkbook wb = new HSSFWorkbook(fs);
-		    HSSFSheet sheet = wb.getSheetAt(0);
-		    Iterator<Row> rowIterator = sheet.iterator();
-		    int count=0;
-		    while (rowIterator.hasNext()) {
-		    	//SKIPPING HEADER CELL
-		    	if(count==0) {
-		    		count++;
-		    		continue;
-		    	}
-		    	Row row = rowIterator.next();
-		    	String stationURI=row.getCell(21).getStringCellValue();
-		    	if(stationURI.equals("station")) {continue;}
-		    	String comuneURI=row.getCell(18).getStringCellValue();
-		    	String stationName=row.getCell(1).getStringCellValue();
-		    	String stationCoordinate=row.getCell(23).getStringCellValue();
-		    	if(stationURI.isEmpty() || stationURI.equals(null)|| stationURI.equals("")) {
-		    		stationURI=exTrainStation+row.getCell(0).getNumericCellValue();
-		    	}
-		    	if(comuneURI.isEmpty() || comuneURI.equals(null)|| comuneURI.equals("")) {
-		    		comuneURI=exCommune+row.getCell(7).getStringCellValue();
-		    	}
-		    	if(stationCoordinate.isEmpty() || stationCoordinate.equals(null)|| stationCoordinate.equals("")) {
-		    		stationCoordinate="P("+row.getCell(13).getNumericCellValue()+" "+row.getCell(14).getNumericCellValue();
-		    	}
-				//SettingUp-InstanceOf
-				stationGraph+="<"+stationURI+"> "
-				+"<"+a+"> "
-				+"<"+model.createProperty(wd+"Q55488").toString()+"> . ";
-				//SettingUp-administartiveTerorityof
-				stationGraph+="<"+stationURI+"> "
-				+"<"+administrativeTerorityOf+"> "
-				+"<"+comuneURI+"> . ";
-				//SettingUp-Label
-				stationGraph+="<"+stationURI+"> "
-				+"<"+RDFS.label.toString()+"> "
-				+" \""+stationName+"\"@en . ";
-				//SettingUp-Comment
-				stationGraph+="<"+stationURI+"> "
-				+"<"+RDFS.comment.toString()+"> "
-				+" \""+stationName+"\"@en . ";
-				//SettingUp-Coordinate
-				stationGraph+="<"+stationURI+"> "
-				+"<"+model.createProperty(property+"P625").toString()+"> "
-				+" \""+stationCoordinate+"\" . ";
-				
-				if(count==399) {
-					System.out.print("SS");
-				}
-				if(count%100==0) {
-				  stationGraph+="}";
-				  LOG.info(stationGraph);
-				  LOG.info("STORING RDF DATA TO DB AT >>>>>> "+count);
-				  saveToGraphDb(stationGraph);
-				  LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
-				  stationGraph="INSERT DATA {";
-				}
-					count++;
-		    }
-	    stationGraph+="}";
-	    LOG.info(stationGraph);
-	    saveToGraphDb(stationGraph);
-	    LOG.info("SUCCESSFULLY UPDATED GRAPH TO THE TRIPPLESTORE");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
 
 	public void dumpCitiesGraphV2() {
 		String a="https://www.wikidata.org/wiki/Property:P31";
@@ -388,9 +182,6 @@ public class DumpData {
 		    	}else {
 		    		comuneURI=" <"+comuneURI+">";
 		    	}
-//		    	if(stationCoordinate.isEmpty() || stationCoordinate.equals(null)|| stationCoordinate.equals("")) {
-//		    		stationCoordinate="Point("+values[13].toString()+" "+values[14].toString();
-//		    	}
 				//SettingUp-InstanceOf
 				stationGraph+="<"+stationURI+"> "
 				+"<"+a+"> "
@@ -777,12 +568,10 @@ public class DumpData {
 			 e.printStackTrace();
 		 }
 	}
-	
-	
-	public void dumpTrainStationTimeTableGraph() {
+	public void dumpBiksStationGraphRennes() {
 		String a="https://www.wikidata.org/wiki/Property:P31";
 		String wd="https://www.wikidata.org/wiki/";
-		String fileName = "src/main/resources/data/train_station_time_table.csv";
+		String fileName = "src/main/resources/data/rennes-bike-station.csv";
 		String geo="http://www.w3.org/2003/01/geo/wgs84_pos#";
 		String organisationID="https://www.wikidata.org/wiki/Property:P1901";
 		String organisation="https://www.wikidata.org/wiki/Property:P2541";
@@ -794,154 +583,96 @@ public class DumpData {
 		String date_ouverture="https://www.wikidata.org/wiki/Property:P580";
 		String wgs84="https://www.wikidata.org/wiki/Property:P625";
 		String connecting_service="https://www.wikidata.org/wiki/Property:P1192";
-		String dbpedia_ontology="http://dbpedia.org/ontology";
-		String custom_ontology="http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#";
+		String dbpedia_ontology="http://dbpedia.org/ontology/";
+		String dbpedia_property="http://dbpedia.org/property/";
 		 File cityFile=new File(fileName);
 		 Model model =ModelFactory.createDefaultModel();
-		 String TimeTableGraph="INSERT DATA {";
+		 String bikeStationGraph="INSERT DATA {";
 		 try (CSVReader csvReader = new CSVReader(new FileReader(cityFile))) {
 		    String[] values = null;
 		    int count=0;
-		    LOG.info("PREPARING CITY RDF DATA");
+		    LOG.info("PREPARING BIKE STATION RDF DATA");
 		    while ((values = csvReader.readNext()) != null) {
 		    	//SKINPING HEADING
 		    	if(count==0) {
 		    		count++;
 		    		continue;
 		    	}
-		        String timeTableQid=ex+values[6];
-        		//DEBUGGINH
-//		        if(hospitalQid.equals("780000410")) {
-//		        	System.out.print("SAD");
-//		        }
-		        
+		    	//GEOMETRY IS UNIQUELY USED TO FIND THE RESOURCE
+		        String bikeStationQid=ex+values[13];
 //		        //SettingUp-InstanceOf
-		        TimeTableGraph+="<"+timeTableQid+"> "
+		        bikeStationGraph+="<"+bikeStationQid+"> "
 				+"<"+a+"> "
-				+"<"+model.createProperty(custom_ontology+"TrainStationTimeTable").toString()+"> . ";
-		        
-//				//SettingUp-Address
-//		        hospitalGraph+="<"+hospitalQid+"> "
-//				+"<"+model.createProperty(schema+"address").toString()+"> "
-//				+" \""+values[6].toString()+"\"@en . ";
-		        
-				//SettingUp-stopId
-		   
-		        if(!values[0].isEmpty() && !values[0].equals(null) &&  !values[0].equals("")) {
-		        	TimeTableGraph+="<"+timeTableQid+"> "
-		    				+"<"+model.createProperty(custom_ontology+"identifiedBy").toString()+"> "
-		    				+" \""+values[0].toString()+"\"@en . ";
-		        }
-		   
-		
-		    	//SettingUp-stopName
-		        if(!values[1].isEmpty() && !values[1].equals(null) &&  !values[1].equals("")) {
-		        	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"hasStopName").toString()+"> "
-					+" \""+values[1].toString()+"\"@en . ";
-		        }
-		    	//SettingUp-Coordinate
-		        if(!values[3].isEmpty() && !values[3].equals(null) &&  !values[3].equals("")) {
-		        	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"coordinates").toString()+"> "
-					+" \"Point("+values[3].toString()+" "+ values[2].toString()+")\" . ";
-	//				model.createTypedLiteral(Double.valueOf(stopLat)).getDatatypeURI()
-		        }
-		        
-		        //SettingUp-parent_station
-
-		        if(!values[4].isEmpty() && !values[4].equals(null) &&  !values[4].equals("")) {
-		        	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"definedBy").toString()+"> "
-					+" \""+values[4].toString()+"\"@en . ";
-		        }
-		      //SettingUp-trip_id
-
-		        if(!values[5].isEmpty() && !values[5].equals(null) &&  !values[5].equals("")) {
-		        	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"hasTripId").toString()+"> "
+				+"<"+model.createProperty(dbpedia_ontology+"Station").toString()+"> . ";
+		        //SettipUp IN-ADIMINSTRATION-TERIORITY-OF LYON
+		        bikeStationGraph+="<"+bikeStationQid+"> "
+						+"<"+property+"P131> "
+						+"<"+model.createProperty("http://www.wikidata.org/entity/Q647").toString()+"> . ";
+				      
+		    	//SettingUp-connecting service
+		        	bikeStationGraph+="<"+bikeStationQid+"> "
+					+"<"+model.createProperty(connecting_service).toString()+"> "
 					+" \""+values[5].toString()+"\"@en . ";
-		        }
-		        
-			      //SettingUp-arrival_time
+		 		//SettingUp-Coordinate
+		        	bikeStationGraph+="<"+bikeStationQid+"> "
+					+"<"+model.createProperty(property+"P625").toString()+"> "
+					+" \"Point("+values[10].toString()+" "+ values[9].toString()+")\" . ";
 
-		        if(!values[6].isEmpty() && !values[6].equals(null) &&  !values[6].equals("")) {
-		        	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"arrivingAt").toString()+"> "
-					+" \""+values[6].toString()+"\"@en . ";
-		        }
-		        //SettingUp-departure_time
-		        if(!values[7].isEmpty() && !values[7].equals(null) &&  !values[7].equals("")) {
-		        	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"departingAt").toString()+"> "
-					+" \""+values[7].toString()+"\"@en . ";
-		        }
-		      //SettingUp-route_id
-		        if(!values[8].isEmpty() && !values[8].equals(null) &&  !values[8].equals("")) {
-		     	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"hasRouteId").toString()+"> "
-					+" \""+values[8].toString()+"\"@en . ";
-		        }
-		        
-		      //SettingUp-agency_id
-		        if(!values[9].isEmpty() && !values[9].equals(null) &&  !values[9].equals("")) {
-		      	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"serviceProvidedBy").toString()+"> "
-					+" \""+values[9].toString()+"\"@en . ";
-		        }
-		        
-		        //SettingUp-service_id
-//		        if(!values[10].isEmpty() && !values[10].equals(null) &&  !values[10].equals("")) {
-//		        	TimeTableGraph+="<"+timeTableQid+"> "
-//					+"<"+model.createProperty(custom_ontology+"service_id").toString()+"> "
-//					+" \""+values[10].toString()+"\"@en . ";
-//		        }
-		        
-
-		        
-		      //SettingUp-date
-		        if(!values[12].isEmpty() && !values[12].equals(null) &&  !values[12].equals("")) {
-		        	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"recordedAt").toString()+"> "
-					+" \""+values[12].toString()+"\"^^<https://www.w3.org/TR/2004/REC-xmlschema-2-20041028/#dateTimeStamp> . ";
-		        }
-		      //SettingUp-code_uic
-		        if(!values[13].isEmpty() && !values[13].equals(null) &&  !values[13].equals("")) {
-		        	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"hasRouteIdentifier").toString()+"> "
-					+" \""+values[13].toString()+"\"@en . ";
-	        	}
-		        
-		        //setting-up stationQid
-		        if(!values[14].isEmpty() && !values[14].equals(null) &&  !values[14].equals("")) {
-		        	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"inAdministrationOf").toString()+"> "
-					+"<"+values[14].toString()+"> . ";
-		        	
-		        }
-		        
-		        
+		        //SettingUp-brand
+		        	bikeStationGraph+="<"+bikeStationQid+"> "
+					+"<"+model.createProperty(schema+"brand").toString()+"> "
+					+" \"VERT\"@en . ";
+		      
+		        //SettingUp-number of racks
+	        	bikeStationGraph+="<"+bikeStationQid+"> "
+				+"<"+model.createProperty(dbpedia_property+"storage").toString()+"> "
+				+" \""+values[5].toString()+"\"^^<http://www.w3.org/2001/XMLSchema#int> . ";
 				if(count%100==0) {
-					TimeTableGraph+="}";
-				  LOG.info(TimeTableGraph);
+					bikeStationGraph+="}";
+				  LOG.info(bikeStationGraph);
 				  LOG.info("STORING RDF DATA TO DB AT >>>>>> "+count);
-//				  saveToGraphDb(cityGraph);
-//				  LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
-				  TimeTableGraph="INSERT DATA {";
+				  saveToGraphDb(bikeStationGraph);
+				  LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
+				  bikeStationGraph="INSERT DATA {";
 				}
 				count++;
-				System.out.println(count);
 		    }
-		    TimeTableGraph+="}";
-
-		    LOG.info(TimeTableGraph);
+		    bikeStationGraph+="}";
+		    LOG.info(bikeStationGraph);
 		    LOG.info("STORING RDF DATA TO DB>>>>>>");
-//		    saveToGraphDb(bikeStationGraph);
+		    saveToGraphDb(bikeStationGraph);
 		    LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
 		 }
 		 catch(Exception e) {
 			 e.printStackTrace();
 		 }
+	}
+	
+	public void readAndSaveOntology() {
+		try {
+			String fileName = "src/main/resources/data/ontology/customOnto.ttl";
+			BufferedReader br = new BufferedReader(new FileReader(fileName));
+			try {
+			    StringBuilder sb = new StringBuilder();
+			    String line = br.readLine();
+	
+			    while (line != null) {
+			        sb.append(line);
+			        sb.append(System.lineSeparator());
+			        line = br.readLine();
+			    }
+			    String everything = sb.toString();
+			    String cleanTTL = everything.replaceAll("\r", "").replaceAll("\n", "");
+			    System.out.print(everything);
+			    saveToGraphDb(cleanTTL);
+			}finally {
+			    br.close();
+			} 
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		
 	}
 
 }
