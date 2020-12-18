@@ -28,7 +28,7 @@ The chosen domain is "Tourrist Assisting Application" that contains different re
 >  This application is an Angular application which is developed in order to act as an user interface. The Angular app conects the backend to the front-end. A user can access this front-end and search for information based on a city name of France. Once a city is chosen from the list, this app shows the real-time availability and static data of bike-station. The UI also shows the current train availability data along with some more static data about train and hospitals. The UI also provides information about the current weather situation of the user-selected city.
 
 
-The project has been initiated with finding proper dataset from different data sources (Heterogenous data sources) and prepared proper dataset with additional effort. This data set has been initially pushed to the chosen tripple store in the boot up time of the application. 
+The project has been initiated with finding proper dataset from different data sources (Heterogenous data sources) and prepared proper dataset with additional effort. This data set has been initially pushed to the chosen tripple store during the boot up time of the application. 
 
 >
 >All the functionalities were developed based on asynchronous refresh method. 
@@ -100,7 +100,7 @@ Run `npm install` in the root folder.
 ## Start the application
 Run `ng serve` to start the application in local environment.
 
-# Front-App For Cloud Computing Project
+# Front-App For Semantic Web Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
 
