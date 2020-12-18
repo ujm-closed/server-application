@@ -46,18 +46,18 @@ import java.util.logging.Logger;
 @Component
 public class DumpData {
 	private final Logger LOG = Logger.getLogger(DumpData.class.getName());
-	// GraphDB SemWeb PersonData
+// GraphDB SemWeb PersonData
 //	@Value("${GRAPH_REPO_QUERY}")
-
-    private  String GRAPH_REPO_QUERY =
-    		"http://localhost:7200/repositories/PersonData";
+//	private  String GRAPH_REPO_QUERY ;
 //	@Value("${GRAPH_REPO_UPDATE}")
+//    private String GRAPH_REPO_UPDATE ;
+//TESTING
+    private  String GRAPH_REPO_QUERY =
+    		"http://localhost:7200/repositories/SemWeb";
     private String GRAPH_REPO_UPDATE = 
-    		"http://localhost:7200/repositories/PersonData/statements" ;
+    		"http://localhost:7200/repositories/SemWeb/statements" ;
     @PostConstruct
 	public void dumpData() {
-  		//FUSEKI
-
   		LOG.info("RDF DATA STORING PROCESS INITIATED");
 //		dumpTrainStationData();
 //		dumpCities();
@@ -299,7 +299,7 @@ public class DumpData {
 				//SettingUp-Country
 				cityGraph+="<"+cityQid+"> "
 				+"<"+model.createProperty(property+"P17").toString()+"> "
-				+"<"+model.createProperty(property+"P17").toString()+"> . ";
+				+"<"+model.createProperty(wd+"Q142").toString()+"> . ";
 				//SettingUp-Label
 				cityGraph+="<"+cityQid+"> "
 				+"<"+RDFS.label.toString()+"> "
@@ -422,11 +422,11 @@ public class DumpData {
 				//Setting Up Lat
 				stationGraph+="<"+stationURI+"> "
 				+"<"+model.createProperty(geo+"lat").toString()+"> "
-				+" \""+model.createTypedLiteral(Double.valueOf(values[14].toString())).toString()+"\" . ";
+				+" \""+model.createLiteral(values[14].toString()).toString()+"\"^^<http://www.w3.org/2001/XMLSchema#double> . ";
 				//Setting Up Long
 				stationGraph+="<"+stationURI+"> "
 				+"<"+model.createProperty(geo+"long").toString()+"> "
-				+" \""+model.createTypedLiteral(Double.valueOf(values[13].toString())).toString()+"\" . ";
+				+" \""+model.createLiteral(values[13].toString()).toString()+"\"^^<http://www.w3.org/2001/XMLSchema#double> . ";
 				if(count%10==0) {
 				  stationGraph+="}";
 //				  LOG.info(stationGraph);
@@ -522,7 +522,6 @@ public class DumpData {
 	    updateProcessor.execute();
     }
 	
-	//***
 	public void dumpHospitalGraph() {
 		String a="https://www.wikidata.org/wiki/Property:P31";
 		String wd="https://www.wikidata.org/wiki/";
@@ -531,12 +530,10 @@ public class DumpData {
 		String organisationID="https://www.wikidata.org/wiki/Property:P1901";
 		String organisation="https://www.wikidata.org/wiki/Property:P2541";
 		String property="https://www.wikidata.org/wiki/Property:";
-		String coordinate="https://www.wikidata.org/wiki/Property:P625";
 		String ex="http://www.example.org/";
 		String schemaHospitalInstance="https://schema.org/Hospital";
 		String schema="https://schema.org/";
 		String date_ouverture="https://www.wikidata.org/wiki/Property:P580";
-		String wgs84="https://www.wikidata.org/wiki/Property:P625";
 		 ClassLoader classLoader = getClass().getClassLoader();
 		 File cityFile=new File(fileName);
 		 Model model =ModelFactory.createDefaultModel();
@@ -552,23 +549,12 @@ public class DumpData {
 		    		continue;
 		    	}
 		        String hospitalQid=ex+values[0];
-        		//DEBUGGINH
-		        if(hospitalQid.equals("780000410")) {
-		        	System.out.print("SAD");
-		        }
-		        
 		        //SettingUp-InstanceOf
 		        hospitalGraph+="<"+hospitalQid+"> "
 				+"<"+a+"> "
 				+"<"+model.createProperty(schema+"Hospital").toString()+"> . ";
 		        
-//				//SettingUp-Address
-//		        hospitalGraph+="<"+hospitalQid+"> "
-//				+"<"+model.createProperty(schema+"address").toString()+"> "
-//				+" \""+values[6].toString()+"\"@en . ";
-		        
-				//SettingUp-Ã¯Â»Â¿finess_et
-		   
+				//SettingUp-finess_et
 		        if(!values[0].isEmpty() && !values[0].equals(null) &&  !values[0].equals("")) {
 		        	hospitalGraph+="<"+hospitalQid+"> "
 		    				+"<"+model.createProperty(property+"P1901").toString()+"> "
@@ -596,13 +582,15 @@ public class DumpData {
 		    	//SettingUp-telephone
 			        hospitalGraph+="<"+hospitalQid+"> "
 					+"<"+model.createProperty(schema+"telephone").toString()+"> "
-					+" \""+values[4].toString()+"\"@en . ";
+//					+" \""+model.createTypedLiteral(Integer.valueOf(values[4].toString())).getInt()+"\"^^<"+model.createTypedLiteral(Integer.valueOf(values[4].toString())).getDatatypeURI()+" . ";
+					+" \""+model.createTypedLiteral(Integer.valueOf(values[4].toString())).getInt()+"\"^^<http://www.w3.org/2001/XMLSchema#int> . ";
+			        
 		        }
 		        if(!values[5].isEmpty() && !values[5].equals(null) &&  !values[5].equals("")) {
 		    	//SettingUp-faxNumber
 		        	hospitalGraph+="<"+hospitalQid+"> "
 					+"<"+model.createProperty(schema+"faxNumber").toString()+"> "
-					+" \""+values[5].toString()+"\"@en . ";
+		        	+" \""+values[5].toString()+"\"@en . ";
 		        }
 		    	//SettingUp-type_etablissement
 		        if(!values[6].isEmpty() && !values[6].equals(null) &&  !values[6].equals("")) {
@@ -628,12 +616,6 @@ public class DumpData {
 				+"<"+model.createProperty(geo+"long").toString()+"> "
 				+" \""+values[9].toString()+"\"@en . ";
 		        }
-		    	//SettingUp-wgs84
-		        if(!values[10].isEmpty() && !values[10].equals(null) &&  !values[10].equals("")) {
-			        hospitalGraph+="<"+hospitalQid+"> "
-					+"<"+model.createProperty(wgs84).toString()+"> "
-					+" \""+values[10].toString()+"\"@en . ";
-			    }
 		    	//SettingUp-COMMUNE
 		        if(!values[11].isEmpty() && !values[11].equals(null) &&  !values[11].equals("")) {
 			        hospitalGraph+="<"+hospitalQid+"> "
@@ -670,21 +652,20 @@ public class DumpData {
 		        }
 				if(count%100==0) {
 					hospitalGraph+="}";
-				LOG.info("STORING RDF DATA TO DB AT >>>>>> "+count);
 				  LOG.info(hospitalGraph);
+				  System.out.println(hospitalGraph);
 				  LOG.info("STORING RDF DATA TO DB AT >>>>>> "+count);
-//				  saveToGraphDb(cityGraph);
-//				  LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
-				  hospitalGraph+="INSERT DATA {";
+				  saveToGraphDb(hospitalGraph);
+				  LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
+				  hospitalGraph="INSERT DATA {";
 				}
 				LOG.info("COUNT IS >>>>>> "+count);
 				count++;
 		    }
 		    hospitalGraph+="}";
-
 		    LOG.info(hospitalGraph);
 		    LOG.info("STORING RDF DATA TO DB>>>>>>");
-//		    saveToGraphDb(hospitalGraph);
+		    saveToGraphDb(hospitalGraph);
 		    LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
 		 }
 		 catch(Exception e) {
@@ -693,7 +674,7 @@ public class DumpData {
 	}
 	
 
-	public void dumpBiksStationGraph() {
+	public void dumpBiksStationGraphLyon() {
 		String a="https://www.wikidata.org/wiki/Property:P31";
 		String wd="https://www.wikidata.org/wiki/";
 		String fileName = "src/main/resources/data/lyon_bike_station.csv";
@@ -708,7 +689,8 @@ public class DumpData {
 		String date_ouverture="https://www.wikidata.org/wiki/Property:P580";
 		String wgs84="https://www.wikidata.org/wiki/Property:P625";
 		String connecting_service="https://www.wikidata.org/wiki/Property:P1192";
-		String dbpedia_ontology="http://dbpedia.org/ontology";
+		String dbpedia_ontology="http://dbpedia.org/ontology/";
+		String dbpedia_property="http://dbpedia.org/property/";
 		 File cityFile=new File(fileName);
 		 Model model =ModelFactory.createDefaultModel();
 		 String bikeStationGraph="INSERT DATA {";
@@ -723,30 +705,21 @@ public class DumpData {
 		    		continue;
 		    	}
 		        String bikeStationQid=ex+values[0];
-        		//DEBUGGINH
-//		        if(hospitalQid.equals("780000410")) {
-//		        	System.out.print("SAD");
-//		        }
-		        
 //		        //SettingUp-InstanceOf
 		        bikeStationGraph+="<"+bikeStationQid+"> "
 				+"<"+a+"> "
 				+"<"+model.createProperty(dbpedia_ontology+"Station").toString()+"> . ";
+		        //SettipUp IN-ADIMINSTRATION-TERIORITY-OF LYON
+		        bikeStationGraph+="<"+bikeStationQid+"> "
+						+"<"+property+"P131> "
+						+"<"+model.createProperty("http://www.wikidata.org/entity/Q456").toString()+"> . ";
+				        
 		        
-//				//SettingUp-Address
-//		        hospitalGraph+="<"+hospitalQid+"> "
-//				+"<"+model.createProperty(schema+"address").toString()+"> "
-//				+" \""+values[6].toString()+"\"@en . ";
-		        
-				//SettingUp-Ã¯Â»Â¿finess_et
-		   
 		        if(!values[0].isEmpty() && !values[0].equals(null) &&  !values[0].equals("")) {
 		        	bikeStationGraph+="<"+bikeStationQid+"> "
 		    				+"<"+model.createProperty(property+"P1901").toString()+"> "
-		    				+" \""+values[0].toString()+"\"@en . ";
+		    				+" \""+values[0].toString()+"\" . ";
 		        }
-		   
-		
 		    	//SettingUp-connecting service
 		        if(!values[1].isEmpty() && !values[1].equals(null) &&  !values[1].equals("")) {
 		        	bikeStationGraph+="<"+bikeStationQid+"> "
@@ -759,9 +732,6 @@ public class DumpData {
 					+"<"+model.createProperty(schema+"address").toString()+"> "
 					+" \""+values[3].toString()+"\"@en . ";
 		        }
-		        
-		    	
-			
 		 		//SettingUp-Coordinate
 		        if(!values[4].isEmpty() && !values[4].equals(null) &&  !values[4].equals("")) {
 		        	bikeStationGraph+="<"+bikeStationQid+"> "
@@ -769,7 +739,6 @@ public class DumpData {
 					+" \"Point("+values[4].toString()+" "+ values[3].toString()+")\" . ";
 	//				model.createTypedLiteral(Double.valueOf(stopLat)).getDatatypeURI()
 		        }
-		        
 		        //SettingUp-brand
 		        if(!values[5].isEmpty() && !values[5].equals(null) &&  !values[5].equals("")) {
 		        	bikeStationGraph+="<"+bikeStationQid+"> "
@@ -780,33 +749,28 @@ public class DumpData {
 		        if(!values[6].isEmpty() && !values[6].equals(null) &&  !values[6].equals("")) {
 		        	bikeStationGraph+="<"+bikeStationQid+"> "
 					+"<"+model.createProperty(schema+"productID").toString()+"> "
-					+" \""+values[6].toString()+"\"@en . ";
+					+" \""+values[6].toString()+"\" . ";
 		        }
-		        
 			      //SettingUp-number of racks
 		        if(!values[7].isEmpty() && !values[7].equals(null) &&  !values[7].equals("")) {
 		        	bikeStationGraph+="<"+bikeStationQid+"> "
-					+"<"+model.createProperty(schema+"additionalProperty").toString()+"> "
-					+" \""+values[7].toString()+"\"@en . ";
+					+"<"+model.createProperty(dbpedia_property+"storage").toString()+"> "
+					+" \""+values[7].toString()+"\"^^<http://www.w3.org/2001/XMLSchema#int> . ";
 		        }
-		        
-		        
 				if(count%100==0) {
 					bikeStationGraph+="}";
 				  LOG.info(bikeStationGraph);
 				  LOG.info("STORING RDF DATA TO DB AT >>>>>> "+count);
-//				  saveToGraphDb(cityGraph);
-//				  LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
+				  saveToGraphDb(bikeStationGraph);
+				  LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
 				  bikeStationGraph="INSERT DATA {";
 				}
 				count++;
-				System.out.println(count);
 		    }
 		    bikeStationGraph+="}";
-
 		    LOG.info(bikeStationGraph);
 		    LOG.info("STORING RDF DATA TO DB>>>>>>");
-//		    saveToGraphDb(bikeStationGraph);
+		    saveToGraphDb(bikeStationGraph);
 		    LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
 		 }
 		 catch(Exception e) {
