@@ -16,7 +16,7 @@
 ## About the Project
 
 This project is developed in order to demostrate Semantic Web architecture by using Spring-Boot for the backend, Graph-DB to store data in the form of triples.
-The chosen domain is "Tourrist Assisting Application" that contains different resource information such as `City Information`, `Hospital Information`, `Train Station`, `Bike Station` information. 
+The chosen domain is "Tourist Assisting Application" that contains different resource information such as `City Information`, `Hospital Information`, `Train Station`, `Bike Station` information. 
 
 # Application overview 
  This project consist of three main applications.  
@@ -25,10 +25,10 @@ The chosen domain is "Tourrist Assisting Application" that contains different re
 >
 > found in `front-app` repository 
 >   
->  This application is an Angular application which is developed in order to act as an user interface. The Angular app conects the backend to the front-end. A user can access this front-end and search for information based on a city name of France. Once a city is chosen from the list, this app shows the real-time availability and static data of bike-station. The UI also shows the current train availability data along with some more static data about train and hospitals. The UI also provides information about the current weather situation of the user-selected city.
+>  This application is an Angular application which is developed in order to act as an user interface. The Angular app connects the backend to the front-end. A user can access this front-end and search for information based on a city name, of France. Once a city is chosen from the list, this app shows the real-time availability and static data of bike-station. The UI also shows the current train availability data along with some more static data about train and hospitals. The UI also provides information about the current weather situation of the user-selected city.
 
 
-The project has been initiated with finding proper dataset from different data sources (Heterogenous data sources) and prepared proper dataset with additional effort. This data set has been initially pushed to the chosen tripple store during the boot up time of the application. 
+The project has been initiated with finding proper dataset from different data sources (Heterogenous data sources) and prepared proper dataset with additional effort. This data set has been initially pushed to the chosen triple store during the boot up time of the application. 
 
 >
 >All the functionalities were developed based on asynchronous refresh method. 
@@ -77,7 +77,7 @@ The project has been initiated with finding proper dataset from different data s
 * GRAPH-DB
 * Apache Jena
 * Angular 10
-* Portege
+* Protégé
 
 ## Installation GraphDB 
 
