@@ -13,8 +13,10 @@ public class DumpDataTest {
 	@Test
     public void testDumpStations(CapturedOutput output) {
         DumpData dump=new DumpData();
-
-        dump.dumpTrainStationGraphV2();
+//        dump.dumpCityGraphV2();//DONE
+//        dump.dumpStationGraphV2();//DONE
+//        dump.dumpHospitalGraph();//DONE
+          dump.dumpBiksStationGraphLyon();//DONE
         //       Assertions.assertThat(output.getAll()).contains("SAINT-ETIENNE");
 
     }

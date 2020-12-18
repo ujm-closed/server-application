@@ -26,20 +26,6 @@ public class StationDao {
 //    = "http://localhost:7200/repositories/PersonData/statements";
 	public List<RailwayStation> getAllStationByCityName(String cityName) {
 		List<RailwayStation> railwayStations=new ArrayList<>();
-//		 String graphQuery =
-//					" PREFIX a: <https://www.wikidata.org/wiki/Property:>"
-//					+ "PREFIX wd:<https://www.wikidata.org/wiki/>"
-//					+ "PREFIX schema:<http://www.w3.org/2000/01/rdf-schema#>"
-//					+ "SELECT  ?label ?city  ?station ?stationLabel ?stationCoordination {"
-//					+ "	     ?city  a:P31 wd:Q484170 ;"
-//					+ "      		schema:label ?label ;"
-//					+ "	      		schema:comment \""+cityName+"\"@en ."
-//					+ "    	 ?station  a:P31 wd:Q55488 ;"
-//					+ "                a:P625 ?stationCoordination;"
-//					+ "                a:P131 ?city;"
-////					+ "                schema:comment ?stationComment;"
-//					+ "                schema:label ?stationLabel ."
-//					+ " }"; 
 		String graphQuery=""
 				+ "PREFIX a: <https://www.wikidata.org/wiki/Property:> "
 				+ "PREFIX wd:<https://www.wikidata.org/wiki/> "
