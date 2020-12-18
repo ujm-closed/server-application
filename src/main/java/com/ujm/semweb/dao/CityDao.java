@@ -1,5 +1,7 @@
 package com.ujm.semweb.dao;
 
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -11,9 +13,17 @@ import org.apache.jena.query.QueryFactory;
 import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.query.ResultSetFormatter;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.update.UpdateExecutionFactory;
+import org.apache.jena.update.UpdateFactory;
+import org.apache.jena.update.UpdateProcessor;
+import org.apache.jena.update.UpdateRequest;
+import org.apache.jena.vocabulary.RDFS;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
 
+import com.opencsv.CSVReader;
 import com.ujm.semweb.config.DumpData;
 import com.ujm.semweb.model.City;
 
@@ -118,9 +128,53 @@ public class CityDao {
 		   }
 		   
 	}
+
+	public void createNewCityRdf(City city) {
+		String a="https://www.wikidata.org/wiki/Property:P31";
+		String wd="https://www.wikidata.org/wiki/";
+		String fileName = "src/main/resources/data/refined/city_data.csv";
+		String geo="http://www.w3.org/2003/01/geo/wgs84_pos#";
+		String administrativeTerorityOf="https://www.wikidata.org/wiki/Property:P131";
+		String property="https://www.wikidata.org/wiki/Property:";
+		String coordinate="https://www.wikidata.org/wiki/Property:P625";
+		ClassLoader classLoader = getClass().getClassLoader();
+		Model model =ModelFactory.createDefaultModel();
+		String cityGraph="INSERT DATA {";
+	    LOG.info("PREPARING CITY RDF DATA");
+        String cityQid=city.uri;
+		//SettingUp-InstanceOf
+        cityGraph+=" <"+cityQid+"> "
+		+" <"+a+"> "
+		+" <"+model.createProperty(wd+"Q484170").toString()+"> . ";
+		//SettingUp-Country
+		cityGraph+="<"+cityQid+"> "
+		+"<"+model.createProperty(property+"P17").toString()+"> "
+		+"<"+model.createProperty(wd+"Q142").toString()+"> . ";
+		//SettingUp-Label
+		cityGraph+="<"+cityQid+"> "
+		+"<"+RDFS.label.toString()+"> "
+		+" \""+city.label.toString()+"\" . ";
+		//SettingUp-Comment
+		cityGraph+="<"+cityQid+"> "
+		+"<"+RDFS.comment.toString()+"> "
+		+" \""+city.comment.toString()+"\"@en . ";
+		//SettingUp-Coordinate
+		cityGraph+="<"+cityQid+"> "
+		+"<"+model.createProperty(property+"P625").toString()+"> "
+		+" \"Point("+city.long_+" "+city.lat +")\" . ";
+		cityGraph+="}";
+		LOG.info(cityGraph);
+		saveToGraphDb(cityGraph);
+	    LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
+	}
 	
-	
-	
+	private void saveToGraphDb(String insertStatement) {
+	    UpdateRequest updateRequest = UpdateFactory.create(insertStatement);
+	    UpdateProcessor updateProcessor = UpdateExecutionFactory
+	        .createRemote(updateRequest, 
+			GRAPH_REPO_UPDATE);
+	    updateProcessor.execute();
+	}
 	private QueryExecution prepaerQueryExecution(String query) {
 	    QueryExecution queryExecution = QueryExecutionFactory
 	        .sparqlService(GRAPH_REPO_QUERY, query);

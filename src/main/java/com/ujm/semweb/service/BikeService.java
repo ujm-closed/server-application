@@ -21,6 +21,9 @@ public class BikeService {
 	public List<BikeStation> searchCity(String cityName) {
 		return bikeStationDao.getAllStationByCityName(cityName);
 	}
+	public void saveRdf(List<BikeStation> bikeStations) {
+		 bikeStationDao.saveRdf(bikeStations);
+	}
 	
 	
 }
