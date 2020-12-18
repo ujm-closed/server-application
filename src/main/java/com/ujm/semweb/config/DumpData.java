@@ -891,7 +891,7 @@ public class DumpData {
 		      //SettingUp-trip_id
 
 		        if(!values[5].isEmpty() && !values[5].equals(null) &&  !values[5].equals("")) {
-		        	TimeTableGraph+="<"+timeTableQid+"> "
+	aaaaa	        	TimeTableGraph+="<"+timeTableQid+"> "
 					+"<"+model.createProperty(custom_ontology+"hasRouteLabel").toString()+"> "
 					+" \""+values[5].toString()+"\"@en . ";
 		        }
@@ -903,35 +903,58 @@ public class DumpData {
 					+"<"+model.createProperty(custom_ontology+"arrivingAt").toString()+"> "
 					+" \""+values[6].toString()+"\"@en . ";
 		        }
-		        //SettingUp-route_id
+		        //SettingUp-departure_time
 		        if(!values[7].isEmpty() && !values[7].equals(null) &&  !values[7].equals("")) {
 		        	TimeTableGraph+="<"+timeTableQid+"> "
 					+"<"+model.createProperty(custom_ontology+"departingAt").toString()+"> "
 					+" \""+values[7].toString()+"\"@en . ";
 		        }
-		      //SettingUp-service_id
+		      //SettingUp-route_id
 		        if(!values[8].isEmpty() && !values[8].equals(null) &&  !values[8].equals("")) {
-		        	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"transportMean").toString()+"> "
+		    asdasd    	TimeTableGraph+="<"+timeTableQid+"> "
+					+"<"+model.createProperty(custom_ontology+"route_id").toString()+"> "
 					+" \""+values[8].toString()+"\"@en . ";
 		        }
-		      //SettingUp-trip_headsign
-		        if(!values[9].isEmpty() && !values[9].equals(null) &&  !values[6].equals("")) {
-		        	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"revisedIn").toString()+"> "
+		        
+		      //SettingUp-agency_id
+		        if(!values[9].isEmpty() && !values[9].equals(null) &&  !values[9].equals("")) {
+		    asdasd    	TimeTableGraph+="<"+timeTableQid+"> "
+					+"<"+model.createProperty(custom_ontology+"serviceProvidedBy").toString()+"> "
 					+" \""+values[9].toString()+"\"@en . ";
 		        }
-		      //SettingUp-direction_id
+		        
+		        //SettingUp-service_id
 		        if(!values[10].isEmpty() && !values[10].equals(null) &&  !values[10].equals("")) {
 		        	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"hasRouteIdentifier").toString()+"> "
+					+"<"+model.createProperty(custom_ontology+"service_id").toString()+"> "
 					+" \""+values[10].toString()+"\"@en . ";
 		        }
 		        
-		        if(!values[11].isEmpty() && !values[11].equals(null) &&  !values[14].equals("")) {
+		        //SettingUp-trip_heads
+		        if(!values[11].isEmpty() && !values[11].equals(null) &&  !values[11].equals("")) {
+		        	TimeTableGraph+="<"+timeTableQid+"> "
+	aaaa				+"<"+model.createProperty(custom_ontology+"trip_id").toString()+"> "
+					+" \""+values[11].toString()+"\"@en . ";
+		        }
+		        
+		      //SettingUp-date
+		        if(!values[12].isEmpty() && !values[12].equals(null) &&  !values[12].equals("")) {
+		        	TimeTableGraph+="<"+timeTableQid+"> "
+					+"<"+model.createProperty(custom_ontology+"revisedIn").toString()+"> "
+					+" \""+values[12].toString()+"\"@en . ";
+		        }
+		      //SettingUp-code_uic
+		        if(!values[13].isEmpty() && !values[13].equals(null) &&  !values[13].equals("")) {
+		        	TimeTableGraph+="<"+timeTableQid+"> "
+					+"<"+model.createProperty(custom_ontology+"hasRouteIdentifier").toString()+"> "
+					+" \""+values[13].toString()+"\"@en . ";
+	        	}
+		        
+		        //setting-up stationQid
+		        if(!values[14].isEmpty() && !values[14].equals(null) &&  !values[14].equals("")) {
 		        	TimeTableGraph+="<"+timeTableQid+"> "
 					+"<"+model.createProperty(custom_ontology+"inAdministrationOf").toString()+"> "
-					+"<"+values[11].toString()+"> . ";
+					+"<"+values[14].toString()+"> . ";
 		        	
 		        }
 		        
