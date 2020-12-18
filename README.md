@@ -79,14 +79,16 @@ The project has been initiated with finding proper dataset from different data s
 * Angular 10
 * Portege
 
-## Reference 
- ### Library Reference 
+## Installation GraphDB 
 
-*Configuration file* : https://www.codejava.net/coding/reading-and-writing-configuration-for-java-application-using-properties-class
+- Requirements
+- Running GraphDB
+- Configuring GraphDB
+- Migrating GraphDB Configurations
+- Distribution package
+- Using Maven Artifacts
 
-*Spring boot* : https://spring.io/projects/spring-boot
-
-*Jackson.jar* : https://github.com/FasterXML/jackson
+To find out the detailed ways to follow the above process, please [click-here](https://graphdb.ontotext.com/documentation/standard/installation.html)
 
  
 ## ANGULAR SPECIFIC SUPPORT
@@ -127,4 +129,17 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Reference 
+ ### Library Reference 
+
+*Configuration file* : https://www.codejava.net/coding/reading-and-writing-configuration-for-java-application-using-properties-class
+
+*Spring boot* : https://spring.io/projects/spring-boot
+
+*Jackson.jar* : https://github.com/FasterXML/jackson
+
+*graphdb* :https://graphdb.ontotext.com/
+
+
 
