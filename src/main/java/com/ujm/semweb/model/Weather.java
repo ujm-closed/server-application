@@ -6,7 +6,7 @@ import lombok.Data;
 public class Weather {
 
 	public String description; //3
-	public String humidity; //9
+	public String airHumidity; //9
 	public String temperatureValue; //4
 	public String feelsLike; //5
 	public String maxTemperature;//6 
@@ -16,9 +16,9 @@ public class Weather {
 	public String id;//1
 	
 	public String weather_main;
-	public String main_pressure; //airPressure unit is hPa
-	public String visibilty; //10000m = 10km. how far could have been seen in straight line without obstruction
-	public String wind_speed; //km/hr
+	public String mainPressure; //airPressure unit is hPa
+	public String visibiltyAhead; //10000m = 10km. how far could have been seen in straight line without obstruction
+	public String windSpeed; //km/hr
 	public String sun_rise; //time given which is same as unix to regular dataTime conversion
 	public String sun_set;
 	

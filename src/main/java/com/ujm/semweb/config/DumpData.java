@@ -891,8 +891,8 @@ public class DumpData {
 		      //SettingUp-trip_id
 
 		        if(!values[5].isEmpty() && !values[5].equals(null) &&  !values[5].equals("")) {
-	aaaaa	        	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"hasRouteLabel").toString()+"> "
+		        	TimeTableGraph+="<"+timeTableQid+"> "
+					+"<"+model.createProperty(custom_ontology+"hasTripId").toString()+"> "
 					+" \""+values[5].toString()+"\"@en . ";
 		        }
 		        
@@ -911,37 +911,32 @@ public class DumpData {
 		        }
 		      //SettingUp-route_id
 		        if(!values[8].isEmpty() && !values[8].equals(null) &&  !values[8].equals("")) {
-		    asdasd    	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"route_id").toString()+"> "
+		     	TimeTableGraph+="<"+timeTableQid+"> "
+					+"<"+model.createProperty(custom_ontology+"hasRouteId").toString()+"> "
 					+" \""+values[8].toString()+"\"@en . ";
 		        }
 		        
 		      //SettingUp-agency_id
 		        if(!values[9].isEmpty() && !values[9].equals(null) &&  !values[9].equals("")) {
-		    asdasd    	TimeTableGraph+="<"+timeTableQid+"> "
+		      	TimeTableGraph+="<"+timeTableQid+"> "
 					+"<"+model.createProperty(custom_ontology+"serviceProvidedBy").toString()+"> "
 					+" \""+values[9].toString()+"\"@en . ";
 		        }
 		        
 		        //SettingUp-service_id
-		        if(!values[10].isEmpty() && !values[10].equals(null) &&  !values[10].equals("")) {
-		        	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"service_id").toString()+"> "
-					+" \""+values[10].toString()+"\"@en . ";
-		        }
+//		        if(!values[10].isEmpty() && !values[10].equals(null) &&  !values[10].equals("")) {
+//		        	TimeTableGraph+="<"+timeTableQid+"> "
+//					+"<"+model.createProperty(custom_ontology+"service_id").toString()+"> "
+//					+" \""+values[10].toString()+"\"@en . ";
+//		        }
 		        
-		        //SettingUp-trip_heads
-		        if(!values[11].isEmpty() && !values[11].equals(null) &&  !values[11].equals("")) {
-		        	TimeTableGraph+="<"+timeTableQid+"> "
-	aaaa				+"<"+model.createProperty(custom_ontology+"trip_id").toString()+"> "
-					+" \""+values[11].toString()+"\"@en . ";
-		        }
+
 		        
 		      //SettingUp-date
 		        if(!values[12].isEmpty() && !values[12].equals(null) &&  !values[12].equals("")) {
 		        	TimeTableGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"revisedIn").toString()+"> "
-					+" \""+values[12].toString()+"\"@en . ";
+					+"<"+model.createProperty(custom_ontology+"recordedAt").toString()+"> "
+					+" \""+values[12].toString()+"\"^^<https://www.w3.org/TR/2004/REC-xmlschema-2-20041028/#dateTimeStamp> . ";
 		        }
 		      //SettingUp-code_uic
 		        if(!values[13].isEmpty() && !values[13].equals(null) &&  !values[13].equals("")) {
