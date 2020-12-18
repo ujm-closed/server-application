@@ -8,7 +8,6 @@ import org.apache.jena.rdf.model.ModelFactory;
 import org.springframework.stereotype.Service;
 
 import com.opencsv.CSVReader;
-import com.ujm.semweb.config.asdasd;
 import com.ujm.semweb.model.Weather;
 
 @Service
@@ -32,29 +31,19 @@ public class WeatherService {
 		String connecting_service="https://www.wikidata.org/wiki/Property:P1192";
 		String dbpedia_ontology="http://dbpedia.org/ontology";
 		String custom_ontology="http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#";
-		 File cityFile=new File(fileName);
-		 Model model =ModelFactory.createDefaultModel();
-		 String weatherQid=ex+"weather/"+weather.id;
+		Model model =ModelFactory.createDefaultModel();
+		String weatherQid=ex+"weather/"+weather.id;
 		
-		 String weatherGraph="INSERT DATA {";
+		String weatherGraph="INSERT DATA {";
 		 weatherGraph+="<"+weatherQid+"> "
 					+"<"+a+"> "
 					+"<"+model.createProperty(custom_ontology+"TrainStationTimeTable").toString()+"> . ";
-//		 weatherGraph+="<"+weatherQid+"> "
-//					+"<"+custom_ontology+"identifiedBy"+"> "
-//					+" \""+model.createTypedLiteral(Integer.valueOf(weather.id)).getInt()+"\"^^<http://www.w3.org/2001/XMLSchema#int> . ";
-	        
-	
-	
 			//SettingUp-weatherId
-	   
 	        if(!weather.id.isEmpty() && !weather.id.equals(null) &&  !weather.id.equals("")) {
 	        	weatherGraph+="<"+weatherGraph+"> "
 	    				+"<"+model.createProperty(custom_ontology+"identifiedBy").toString()+"> "
 	    				+" \""+weather.id.toString()+"\"@en . ";
 	        }
-	   
-	
 	    	//SettingUp-weatherMain
 	        if(!weather.weather_main.isEmpty() && !weather.weather_main.equals(null) &&  !weather.weather_main.equals("")) {
 	        	weatherGraph+="<"+weatherGraph+"> "
@@ -68,28 +57,23 @@ public class WeatherService {
 				+" \"Point("+weather.description.toString()+"\"@en . ";
 
 	        }
-	        
 	        //SettingUp-mainTemperature
-
 	        if(!weather.temperatureValue.isEmpty() && !weather.temperatureValue.equals(null) &&  !weather.temperatureValue.equals("")) {
 	        	weatherGraph+="<"+weatherGraph+"> "
 	        			+"<"+custom_ontology+"mainTemperature"+"> "
 	        			+" \""+model.createTypedLiteral(Integer.valueOf(weather.temperatureValue)).getInt()+"\"^^<http://www.w3.org/2001/XMLSchema#double> . ";
-	        	
 //	   		 weatherGraph+="<"+weatherQid+"> "
 //				+"<"+custom_ontology+"identifiedBy"+"> "
 //				+" \""+model.createTypedLiteral(Integer.valueOf(weather.id)).getInt()+"\"^^<http://www.w3.org/2001/XMLSchema#int> . ";
 
 	        }
 	      //SettingUp-feelsLike
-
 	        if(!weather.feelsLike.isEmpty() && weather.feelsLike.equals(null) &&  !weather.feelsLike.equals("")) {
 	        	weatherGraph+="<"+weatherGraph+"> "
 	        			+"<"+custom_ontology+"weatherFeelsLike"+"> "
 	        			+" \""+model.createTypedLiteral(Integer.valueOf(weather.feelsLike)).getInt()+"\"^^<http://www.w3.org/2001/XMLSchema#double> . ";
 	        	
 	        }
-	        
 		      //SettingUp-temperatureMinimum
 	        if(!weather.minTemperature.isEmpty() && !weather.minTemperature.equals(null) &&  !weather.minTemperature.equals("")) {
 	        	weatherGraph+="<"+weatherGraph+"> "
@@ -108,79 +92,44 @@ public class WeatherService {
 	        	weatherGraph+="<"+weatherGraph+"> "
 	        	+"<"+custom_ontology+"hasMaxPressure"+"> "
 	        			+" \""+model.createTypedLiteral(Integer.valueOf(weather.mainPressure)).getInt()+"\"^^<http://www.w3.org/2001/XMLSchema#double> . ";
-	        	
 	        }
 	      //SettingUp-humidity
 	        if(!weather.airHumidity.isEmpty() && !weather.airHumidity.equals(null) &&  !weather.airHumidity.equals("")) {
 	        	weatherGraph+="<"+weatherGraph+"> "
 	        			+"<"+custom_ontology+"hasHumidity"+"> "
 	        			+" \""+model.createTypedLiteral(Integer.valueOf(weather.airHumidity)).getInt()+"\"^^<http://www.w3.org/2001/XMLSchema#double> . ";
-	        	
 	        }
 	      //SettingUp-visibility
 	        if(!weather.visibiltyAhead.isEmpty() && !weather.visibiltyAhead.equals(null) &&  !weather.visibiltyAhead.equals("")) {
 	        	weatherGraph+="<"+weatherGraph+"> "
 	        			+"<"+custom_ontology+"visibility"+"> "
 	        			+" \""+model.createTypedLiteral(Integer.valueOf(weather.visibiltyAhead)).getInt()+"\"^^<http://www.w3.org/2001/XMLSchema#int> . ";
-	        	
-       	}
-	        
+	        }
 	        //SettingUp-windSpeed
 	        if(!weather.visibiltyAhead.isEmpty() && !weather.visibiltyAhead.equals(null) &&  !weather.visibiltyAhead.equals("")) {
 	        	weatherGraph+="<"+weatherGraph+"> "
 	        			+"<"+custom_ontology+"visibility"+"> "
 	        			+" \""+model.createTypedLiteral(Integer.valueOf(weather.visibiltyAhead)).getInt()+"\"^^<http://www.w3.org/2001/XMLSchema#int> . ";
-	        	
-       	}
-	        
+	        }
 	        //SettingUp-dateTime
 	        if(!weather.windSpeed.isEmpty() && !weather.windSpeed.equals(null) &&  !weather.windSpeed.equals("")) {
 	        	weatherGraph+="<"+weatherGraph+"> "
 	        			+"<"+custom_ontology+"hasWindSpeed"+"> "
 	        			+" \""+model.createTypedLiteral(Integer.valueOf(weather.windSpeed)).getInt()+"\"^^<http://www.w3.org/2001/XMLSchema#int> . ";
-	        	
-       	}
-	        
+	        }
 	        //SettingUp-sunRise
 	        if(!weather.sun_rise.isEmpty() && !weather.sun_rise.equals(null) &&  !weather.sun_rise.equals("")) {
 	        	weatherGraph+="<"+weatherGraph+"> "
 	        			+"<"+custom_ontology+"hasSunriseTime"+"> "
 	        			+" \""+model.createTypedLiteral(Integer.valueOf(weather.sun_rise)).getInt()+"\"^^<http://www.w3.org/2001/XMLSchema#int> . ";
-	        	
-       	}
-	        
+	        }
 	        //SettingUp-sunSet
 	        if(!weather.sun_set.isEmpty() && !weather.sun_set.equals(null) &&  !weather.sun_set.equals("")) {
 	        	weatherGraph+="<"+weatherGraph+"> "
 	        			+"<"+custom_ontology+"hasSunsetTime"+"> "
 	        			+" \""+model.createTypedLiteral(Integer.valueOf(weather.sun_set)).getInt()+"\"^^<https://www.w3.org/TR/2004/REC-xmlschema-2-20041028/#dateTimeStamp> . ";
-	        	
-       	}
-	        
-	        
-			if(count%100==0) {
-				weatherGraph+="}";
-			  LOG.info(weatherGraph);
-			  LOG.info("STORING RDF DATA TO DB AT >>>>>> "+count);
-//			  saveToGraphDb(cityGraph);
-//			  LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
-			  weatherGraph="INSERT DATA {";
-			}
-			count++;
-			System.out.println(count);
-	    }
-	    TimeTableGraph+="}";
-
-	    LOG.info(TimeTableGraph);
-	    LOG.info("STORING RDF DATA TO DB>>>>>>");
-//	    saveToGraphDb(bikeStationGraph);
-	    LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
-	 }
-	 catch(Exception e) {
-		 e.printStackTrace();
-	 }
-}
-
-}
+	        }
+		}
+		    
 
 }
