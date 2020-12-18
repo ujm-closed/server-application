@@ -795,10 +795,10 @@ public class DumpData {
 		String wgs84="https://www.wikidata.org/wiki/Property:P625";
 		String connecting_service="https://www.wikidata.org/wiki/Property:P1192";
 		String dbpedia_ontology="http://dbpedia.org/ontology";
-		String custom_ontology="";
+		String custom_ontology="http://www.semanticweb.org/dhayananth/ontologies/2020/11/untitled-ontology-7#";
 		 File cityFile=new File(fileName);
 		 Model model =ModelFactory.createDefaultModel();
-		 String bikeStationGraph="INSERT DATA {";
+		 String TimeTableGraph="INSERT DATA {";
 		 try (CSVReader csvReader = new CSVReader(new FileReader(cityFile))) {
 		    String[] values = null;
 		    int count=0;
@@ -816,7 +816,7 @@ public class DumpData {
 //		        }
 		        
 //		        //SettingUp-InstanceOf
-		        bikeStationGraph+="<"+timeTableQid+"> "
+		        TimeTableGraph+="<"+timeTableQid+"> "
 				+"<"+a+"> "
 				+"<"+model.createProperty(custom_ontology+"TrainStationTimeTable").toString()+"> . ";
 		        
@@ -828,21 +828,21 @@ public class DumpData {
 				//SettingUp-stopId
 		   
 		        if(!values[0].isEmpty() && !values[0].equals(null) &&  !values[0].equals("")) {
-		        	bikeStationGraph+="<"+timeTableQid+"> "
-		    				+"<"+model.createProperty(custom_ontology+"identity_number").toString()+"> "
+		        	TimeTableGraph+="<"+timeTableQid+"> "
+		    				+"<"+model.createProperty(custom_ontology+"identifiedBy").toString()+"> "
 		    				+" \""+values[0].toString()+"\"@en . ";
 		        }
 		   
 		
 		    	//SettingUp-stopName
 		        if(!values[1].isEmpty() && !values[1].equals(null) &&  !values[1].equals("")) {
-		        	bikeStationGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"identitifiedBy").toString()+"> "
+		        	TimeTableGraph+="<"+timeTableQid+"> "
+					+"<"+model.createProperty(custom_ontology+"hasStopName").toString()+"> "
 					+" \""+values[1].toString()+"\"@en . ";
 		        }
 		    	//SettingUp-Coordinate
 		        if(!values[3].isEmpty() && !values[3].equals(null) &&  !values[3].equals("")) {
-		        	bikeStationGraph+="<"+timeTableQid+"> "
+		        	TimeTableGraph+="<"+timeTableQid+"> "
 					+"<"+model.createProperty(custom_ontology+"coordinates").toString()+"> "
 					+" \"Point("+values[3].toString()+" "+ values[2].toString()+")\" . ";
 	//				model.createTypedLiteral(Double.valueOf(stopLat)).getDatatypeURI()
@@ -851,87 +851,90 @@ public class DumpData {
 		        //SettingUp-parent_station
 
 		        if(!values[4].isEmpty() && !values[4].equals(null) &&  !values[4].equals("")) {
-		        	bikeStationGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"base").toString()+"> "
+		        	TimeTableGraph+="<"+timeTableQid+"> "
+					+"<"+model.createProperty(custom_ontology+"definedBy").toString()+"> "
 					+" \""+values[4].toString()+"\"@en . ";
 		        }
 		      //SettingUp-trip_id
 
 		        if(!values[5].isEmpty() && !values[5].equals(null) &&  !values[5].equals("")) {
-		        	bikeStationGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"trip_id").toString()+"> "
+		        	TimeTableGraph+="<"+timeTableQid+"> "
+					+"<"+model.createProperty(custom_ontology+"hasTripId").toString()+"> "
 					+" \""+values[5].toString()+"\"@en . ";
 		        }
 		        
 			      //SettingUp-arrival_time
 
 		        if(!values[6].isEmpty() && !values[6].equals(null) &&  !values[6].equals("")) {
-		        	bikeStationGraph+="<"+timeTableQid+"> "
+		        	TimeTableGraph+="<"+timeTableQid+"> "
 					+"<"+model.createProperty(custom_ontology+"arrivingAt").toString()+"> "
 					+" \""+values[6].toString()+"\"@en . ";
 		        }
-		        //SettingUp-route_id
+		        //SettingUp-departure_time
 		        if(!values[7].isEmpty() && !values[7].equals(null) &&  !values[7].equals("")) {
-		        	bikeStationGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"route_id").toString()+"> "
+		        	TimeTableGraph+="<"+timeTableQid+"> "
+					+"<"+model.createProperty(custom_ontology+"departingAt").toString()+"> "
 					+" \""+values[7].toString()+"\"@en . ";
 		        }
-		      //SettingUp-service_id
+		      //SettingUp-route_id
 		        if(!values[8].isEmpty() && !values[8].equals(null) &&  !values[8].equals("")) {
-		        	bikeStationGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"service_id").toString()+"> "
+		     	TimeTableGraph+="<"+timeTableQid+"> "
+					+"<"+model.createProperty(custom_ontology+"hasRouteId").toString()+"> "
 					+" \""+values[8].toString()+"\"@en . ";
 		        }
-		      //SettingUp-trip_headsign
-		        if(!values[9].isEmpty() && !values[9].equals(null) &&  !values[6].equals("")) {
-		        	bikeStationGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"trip_headsign").toString()+"> "
+		        
+		      //SettingUp-agency_id
+		        if(!values[9].isEmpty() && !values[9].equals(null) &&  !values[9].equals("")) {
+		      	TimeTableGraph+="<"+timeTableQid+"> "
+					+"<"+model.createProperty(custom_ontology+"serviceProvidedBy").toString()+"> "
 					+" \""+values[9].toString()+"\"@en . ";
 		        }
-		      //SettingUp-direction_id
-		        if(!values[10].isEmpty() && !values[10].equals(null) &&  !values[10].equals("")) {
-		        	bikeStationGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"direction_id").toString()+"> "
-					+" \""+values[10].toString()+"\"@en . ";
-		        }
-		        //SettingUp-route_long_name
-		        if(!values[11].isEmpty() && !values[11].equals(null) &&  !values[11].equals("")) {
-		        	bikeStationGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"route_long_name").toString()+"> "
-					+" \""+values[11].toString()+"\"@en . ";
-		        }
+		        
+		        //SettingUp-service_id
+//		        if(!values[10].isEmpty() && !values[10].equals(null) &&  !values[10].equals("")) {
+//		        	TimeTableGraph+="<"+timeTableQid+"> "
+//					+"<"+model.createProperty(custom_ontology+"service_id").toString()+"> "
+//					+" \""+values[10].toString()+"\"@en . ";
+//		        }
+		        
+
+		        
+		      //SettingUp-date
 		        if(!values[12].isEmpty() && !values[12].equals(null) &&  !values[12].equals("")) {
-		        	bikeStationGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"date").toString()+"> "
-					+" \""+values[12].toString()+"\"@en . ";
+		        	TimeTableGraph+="<"+timeTableQid+"> "
+					+"<"+model.createProperty(custom_ontology+"recordedAt").toString()+"> "
+					+" \""+values[12].toString()+"\"^^<https://www.w3.org/TR/2004/REC-xmlschema-2-20041028/#dateTimeStamp> . ";
 		        }
+		      //SettingUp-code_uic
 		        if(!values[13].isEmpty() && !values[13].equals(null) &&  !values[13].equals("")) {
-		        	bikeStationGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"CODE_UIC").toString()+"> "
+		        	TimeTableGraph+="<"+timeTableQid+"> "
+					+"<"+model.createProperty(custom_ontology+"hasRouteIdentifier").toString()+"> "
 					+" \""+values[13].toString()+"\"@en . ";
-		        }
+	        	}
+		        
+		        //setting-up stationQid
 		        if(!values[14].isEmpty() && !values[14].equals(null) &&  !values[14].equals("")) {
-		        	bikeStationGraph+="<"+timeTableQid+"> "
-					+"<"+model.createProperty(custom_ontology+"Station_wikidata_QID").toString()+"> "
+		        	TimeTableGraph+="<"+timeTableQid+"> "
+					+"<"+model.createProperty(custom_ontology+"inAdministrationOf").toString()+"> "
 					+"<"+values[14].toString()+"> . ";
 		        	
 		        }
 		        
 		        
 				if(count%100==0) {
-					bikeStationGraph+="}";
-				  LOG.info(bikeStationGraph);
+					TimeTableGraph+="}";
+				  LOG.info(TimeTableGraph);
 				  LOG.info("STORING RDF DATA TO DB AT >>>>>> "+count);
 //				  saveToGraphDb(cityGraph);
 //				  LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
-				  bikeStationGraph="INSERT DATA {";
+				  TimeTableGraph="INSERT DATA {";
 				}
 				count++;
 				System.out.println(count);
 		    }
-		    bikeStationGraph+="}";
+		    TimeTableGraph+="}";
 
-		    LOG.info(bikeStationGraph);
+		    LOG.info(TimeTableGraph);
 		    LOG.info("STORING RDF DATA TO DB>>>>>>");
 //		    saveToGraphDb(bikeStationGraph);
 		    LOG.info("SUCCESSFULLY STORED THE GRAPH DATA>>>>>>");
