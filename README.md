@@ -7,7 +7,9 @@
 
 >*Dhayananth Dharmalingam*
 
-<!-- (Video demo : [click-here](https://www.youtube.com/watch?v=gS8hE2Xa2jM)) -->
+ (Video demo : [part 1](https://www.youtube.com/watch?v=_nbalbt-Uc0)
+ [part 2-JSON-LD](https://www.youtube.com/watch?v=UqEe_YSzXec&feature=youtu.be)) 
+
 
 ## Project Overview 
 ![ontology_diagram](https://github.com/ujm-closed/server-application/blob/feat/rest/snaps/ontologyDiagram.jpg "Project architecture")
@@ -61,7 +63,7 @@ The project has been initiated with finding proper dataset from different data s
  2. Download the Application file from Git repositories (front-app & server-application repositories need to be downloaded) (Here is the link : [click-here](https://github.com/ujm-closed))
 
  3. Import the project to Eclipse as Maven Project. (Here is the link : [click-here](https://www.eclipse.org/downloads/packages/installer))
-4. Update the application properties with relevant path of GraphDB endpoint for both UPDATE, and QUERY. 
+4. Update the application properties with relevant path of GraphDB endpoint for both UPDATE, and QUERY. (in `application.properties` and  `cityDao.java` files) 
  5. Run the java application
  6. Run the front-app (see below for instruction)
  7. In the User interface there are Specific buttons  which allows to see what the application is performing. 
@@ -131,7 +133,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ## Reference 
+### Code Reference
+*JSON LD and Angular* : https://medium.com/javascript-in-plain-english/how-to-use-json-ld-for-advanced-seo-in-angular-63528c98bb91
+
+*Apache Jena to GraphDB* : https://graphdb.ontotext.com/documentation/free/using-graphdb-with-jena.html
  ### Library Reference 
+ 
+
 
 *Configuration file* : https://www.codejava.net/coding/reading-and-writing-configuration-for-java-application-using-properties-class
 
